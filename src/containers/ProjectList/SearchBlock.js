@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AutosizeInput from 'react-input-autosize';
 import { Form } from 'react-bootstrap';
+import './Project.css';
 class SearchBlock extends Component {
   getTextWidth() {
     const text = document.getElementById('suggestion-tags');
@@ -27,6 +28,11 @@ class SearchBlock extends Component {
             <label className={`search-label ${name ? 'd-none' : ''}`}>
               <i className="fas fa-search"></i>
             </label>
+            <span
+              className={` ${name ? 'refresh-icon' : 'd-none'}`}
+              onClick={this.props.handleReset}>
+              <i className="fas fa-undo-alt"></i>
+            </span>&nbsp;&nbsp;&nbsp;
             <AutosizeInput
               className="search-input"
               id="suggestion-tags"
@@ -36,11 +42,7 @@ class SearchBlock extends Component {
               placeholder="Search"
               onChange={this.props.handleChange}
             />
-            <span
-              className={` ${name ? 'refresh-icon' : 'd-none'}`}
-              onClick={this.props.handleReset}>
-              <i className="fas fa-undo-alt"></i>
-            </span>
+            {name ? (<div className="search-btn" onClick={this.props.handleSubmit}>Search</div>) : null}
           </div>
         </div>
         {projectList ? (
