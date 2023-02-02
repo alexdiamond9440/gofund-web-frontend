@@ -13,7 +13,9 @@ Using Putty or XShell to connect AWS EC2 instance that the project will be deplo
 
 ## Clone Code Repository
 > git clone git@github.com:gofundher/gofundher-web-frontend.git
+
 > cd gofundher-web-frontend
+
 > npm install
 
 ## Setup configuration
