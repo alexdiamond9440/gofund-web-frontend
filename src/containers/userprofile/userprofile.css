@@ -1,0 +1,127 @@
+.intro-section {
+  display: flex !important;
+  flex-wrap: wrap;
+  flex-flow: column;
+}
+.intro-section .intro-links {
+  font-size: 15px;
+  color: #989898;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Playfair Display", sans-serif;
+  position: relative;
+  padding-left: 25px;
+}
+.intro-section .intro-links:hover {
+  color: #f485ab;
+}
+.intro-section .intro-links i {
+  margin-right: 10px;
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  color: #f485ab;
+}
+.view-sponsor-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: #f485ab;
+  background-color: rgba(244, 133, 171, 0.21);
+  border-color: transparent;
+  margin: 13px 0px;
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.view-sponsor-btn:hover {
+  color: #fff;
+  background-color: #f485ab;
+}
+.view-project-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: #404040;
+  background-color: rgba(158, 158, 158, 0.28);
+  border-color: transparent;
+  margin: 13px 0px;
+  border-radius: 4px;
+  text-align: center;
+  font-family: "Playfair Display", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.view-project-btn:hover {
+  color: #404040;
+  background-color: rgba(158, 158, 158, 0.7);
+}
+
+.bio-section {
+  margin: 16px 0px 0px;
+}
+.bio-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", sans-serif;
+}
+.bio-text {
+  color: #707070;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "PT Sans", sans-serif;
+  line-height: 26px;
+}
+.single-causes .cause-content .content {
+  padding: 0 20px;
+  min-height: 140px;
+}
+.disabled-sponser {
+  box-shadow: none;
+  opacity: 0.65;
+  background: #f485ab !important;
+  color: #fff !important;
+}
+.donate-input:focus {
+  border-color: #ea6794;
+  border-width: 2px;
+}
+.amount-with-fee {
+  height: auto;
+  min-height: 25px;
+  margin-top: 0;
+  display: block;
+}
+.m-b-3 {
+  margin-bottom: 5px;
+}
+.m-t-5 {
+  margin-top: 5px;
+}
+.remove-m-top {
+  margin-top: 2px;
+  min-height: 19px;
+}
+.form-control.custom-textarea.text-h-115 {
+  height: 115px;
+}
+@media (max-width: 1199px) {
+  .form-control.custom-textarea.text-h-115 {
+    height: 100px;
+  }
+}

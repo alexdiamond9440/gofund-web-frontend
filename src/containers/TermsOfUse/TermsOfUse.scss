@@ -1,0 +1,13 @@
+.TermsOfUsePage {
+    padding: 50px 0;
+    ul,ol{
+        padding: revert;
+        margin: auto;
+    }
+
+    li {
+        list-style-type: disc;
+        list-style-type: initial;
+        margin-top: 10px;
+    }
+}

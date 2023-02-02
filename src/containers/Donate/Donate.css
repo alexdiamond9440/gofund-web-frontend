@@ -1,0 +1,520 @@
+/** @format */
+
+.donate-page-section {
+  padding: 50px 0;
+}
+.project-name-wrap {
+  display: block;
+  padding: 10px 30px 20px;
+  background: #fffafa;
+  margin: 20px 0 0;
+  border: 1px solid #f1eeea;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.project-name-wrap a {
+  display: block;
+  color: #f485ab !important;
+}
+.project-name-wrap a:focus,
+.project-name-wrap a:hover {
+  color: #555;
+}
+li.reward-block {
+  margin-bottom: 20px;
+  font-size: 14px;
+  display: block;
+  background: #ffffff;
+  position: relative;
+  word-break: break-word;
+  padding: 15px;
+  border-radius: 2px;
+  border: 1px solid #eaf0f2;
+  box-shadow: 0 0 4px #dddddd4d;
+}
+li.reward-block a {
+  color: #656969;
+}
+
+li.reward-block a:hover .btn-donate-big {
+  background-color: #fff;
+  color: #000;
+}
+
+.reward-inner-block {
+  position: relative;
+  padding-left: 40px;
+  cursor: pointer;
+}
+.reward-check-btn {
+  position: absolute;
+  left: 0;
+  top: -3px;
+  height: 32px;
+  width: 32px;
+}
+.reward-block-name {
+  margin: 0;
+  font-family: 'PT Sans', sans-serif;
+  color: #222;
+  font-size: 22px;
+}
+.reward-text-wrap h2 {
+  color: #000000;
+  margin-bottom: 0px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 24px;
+  margin-top: 15px;
+  text-shadow: 0 0px 0px #000;
+}
+.reward-text-wrap p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+.pledge-amount-wrap h4 {
+  margin-top: 20px;
+  font-size: 16px;
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+}
+.all-inputs-wrap .input-group {
+  max-width: 300px;
+}
+.all-inputs-wrap {
+  margin: 0px -5px;
+}
+.btn-one-time,
+.btn-recurring {
+  margin: 5px;
+  margin-bottom: 13px;
+}
+.pledge-amount-block {
+  display: flex;
+  align-items: center;
+}
+.pledge-amount-block .input-group {
+  flex: 1;
+  margin-right: 20px;
+  /* max-width: 312px; */
+  margin-bottom: 0px;
+}
+.half-input-wrap .input-group {
+  margin-right: 0px !important;
+}
+.pledge-amount-block .btn-checkout {
+  padding: 10px 20px;
+}
+.half-input-wrap {
+  margin-right: 0px !important;
+}
+.half-input-wrap {
+  flex: 1;
+  margin-right: 0px;
+  max-width: 100%;
+  margin-right: 20px;
+}
+.pledge-amount-block .input-group.quantity-input-wrp {
+  flex: 1;
+  margin-right: 20px;
+  max-width: 312px;
+}
+.quantity-main-wrap {
+  padding: 0px 15px;
+}
+
+.pledge-amount-wrap .btn-checkout {
+  padding: 10px 20px 10px 20px;
+}
+.reward-check-btn input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 0;
+}
+.reward-check-btn label:after {
+  width: 32px;
+  height: 32px;
+  content: '';
+  border: 2px solid #d1d7dc;
+  background-color: #fff;
+  background-image: url('/src/assets/img/radio-check.svg');
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+.reward-check-btn input:checked ~ label:after {
+  background-color: #f485ab;
+  border-color: #ffb0b0;
+}
+
+/* ======== Authorized Modal Css ======== */
+.modal-header {
+  padding: 20px;
+  border-bottom: 2px solid #dddddd;
+  background: #faf7f7;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.modal-header .close {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #ababab;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 1;
+}
+.modal-header .close:focus,
+.modal-header .close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+.modal-header .modal-title {
+  font-weight: 600;
+  text-align: center;
+  color: #222;
+  font-size: 21px;
+}
+.stripImg {
+  position: absolute;
+  right: 15px;
+  top: -3px;
+}
+.stripImg img {
+  width: 160px;
+}
+.authorizemodal .modal-dialog {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%) !important;
+}
+.authorizemodal .note {
+  margin: 0;
+  font-weight: 600;
+  color: #f00;
+  text-align: center;
+}
+.btn-donate-big.btn-pay {
+  padding: 10px 20px 10px 20px;
+  min-width: 150px;
+  font-weight: 500;
+}
+.btn-donate-big.btn-pay span.donate-amount-pay {
+  margin-left: 5px;
+}
+@media (min-width: 768px) {
+  .authorizemodal .modal-dialog {
+    width: 480px;
+    margin: 30px auto;
+  }
+}
+@media (max-width: 767px) {
+  .authorizemodal .modal-dialog {
+    position: relative;
+    left: initial;
+    top: initial;
+    width: 100%;
+    transform: scale(0.9) !important;
+    margin: 0;
+  }
+}
+/* ================Start Thankyou CSS =============== */
+.thank-page-wrap {
+  color: #222;
+}
+.thank-page-section {
+  max-width: 800px;
+  margin: auto;
+  background-color: #fff;
+  padding: 30px 50px 50px;
+  text-align: center;
+  box-shadow: 0px 0px 4px 1px #ccc;
+}
+@media screen and (max-width: 799px) {
+  .thank-page-section {
+    max-width: 100%;
+    margin: auto 15px;
+  }
+}
+.thank-page-section .thank-page-block-up {
+  border-bottom: 2px solid #f1f1f1;
+  margin: 0 -50px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.thank-page-section .thank-page-heading {
+  font-size: 24px;
+  padding: 20px 0px 0px;
+  width: 100%;
+  margin: auto;
+}
+.thank-page-section .thank-page-img {
+  width: 65px;
+  margin: auto;
+}
+.thank-page-section .thank-page-img img {
+  max-width: 100%;
+  width: 100%;
+}
+.thank-page-section .user-sent-info .user-sent-info-heading {
+  color: #999;
+}
+.thank-page-section .user-sent-info {
+  padding: 30px 0px;
+  margin: 30px -50px -50px;
+  background-color: #f1f1f1;
+}
+.btn-contishop {
+  margin: 15px 0 0px;
+}
+.btn-contishop .btn-donate-big {
+  min-width: 150px;
+  padding: 10px 20px;
+}
+.donation-amount {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #666;
+}
+.donation-amount h2 {
+  margin: 10px 0;
+}
+.donation-amount span {
+  font-weight: 500;
+  color: #000;
+  transition: all 0.3s ease;
+}
+.success-massege {
+  color: #222;
+}
+.success-massege span {
+  color: #222;
+  font-weight: 500;
+}
+.donation-amount a:hover,
+.donation-amount a:active,
+.donation-amount a:focus {
+  color: #f385ab;
+}
+/* ================End Thankyou CSS =============== */
+.form-control.error {
+  border: 1px solid red;
+}
+
+.autorize-modal .btn-donate-big.btn-pay,
+.autorize-modal .btn-back {
+  margin: 15px 10px;
+}
+.info-confirmation-modal .btn-donate-big.btn-pay,
+.info-confirmation-modal .btn-back {
+  margin: 15px 5px;
+}
+@media (max-width: 767px) {
+  .authorizemodal.autorize-modal .modal-dialog {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 95%;
+    -webkit-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+@media (max-width: 600px) {
+  .pledge-amount-block {
+    display: flex;
+    align-items: center;
+  }
+  .pledge-amount-inner-block .text-danger {
+    position: absolute;
+    top: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .autorize-modal .btn-donate-big.btn-pay,
+  .autorize-modal .btn-back {
+    min-width: auto;
+    font-size: 16px;
+    padding: 6px 20px;
+  }
+  .autorize-modal .modal-header .modal-title {
+    font-size: 18px;
+  }
+}
+@media (max-width: 365px) {
+  .autorize-modal .btn-donate-big.btn-pay,
+  .autorize-modal .btn-back {
+    min-width: auto;
+    font-size: 14px;
+    margin: 5px 5px;
+    padding: 6px 17px;
+  }
+  .autorize-modal .modal-header {
+    padding-right: 10px;
+  }
+}
+
+#paypal-button-container {
+  width: 165px;
+  margin: 0px auto;
+  z-index: 1;
+}
+.paypal-loader .preloder-wrap {
+  background-color: rgba(0, 0, 0, 0.49);
+  z-index: 10000;
+}
+.checkout-footer-btn .divider {
+  position: relative;
+  color: #b1b1b1;
+  margin: 13px 0px;
+  text-transform: uppercase;
+}
+.checkout-footer-btn .divider:before {
+  content: '';
+  position: absolute;
+  width: 36%;
+  height: 1px;
+  background: #b1b1b1;
+  left: 0;
+  top: 50%;
+}
+.checkout-footer-btn .divider:after {
+  content: '';
+  position: absolute;
+  width: 36%;
+  height: 1px;
+  background: #b1b1b1;
+  right: 0;
+  top: 50%;
+}
+.checkout-footer-btn .divider span {
+  background: #fff;
+  /* z-index: 1; */
+  position: relative;
+  padding: 0px 15px;
+}
+.donate-page-loader {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 550px;
+}
+.donate-page-loader .preloder-wrap {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.alert-paypal-text {
+  padding: 10px;
+  background: #fdfdfd;
+  color: #676767;
+  background-color: #efefef;
+  border-color: #d6d6d6;
+  border-left: 3px solid;
+}
+.paypal-disable-btn {
+  height: 47px;
+  color: #2c2e2f;
+  background: #ffc439;
+  border-radius: 24px;
+  width: 165px;
+  border: 0px;
+  cursor: not-allowed !important;
+  box-shadow: none;
+  opacity: 0.65;
+}
+.paypal-disable-btn:hover {
+  filter: brightness(0.95);
+}
+.paypal-disable-btn img {
+  width: 100px;
+}
+/* toggle css */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-bottom: 0px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  left: 7px;
+  bottom: 7px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.alert-paypal-text {
+  padding: 10px;
+  background: #fdfdfd;
+  color: #676767;
+  background-color: #efefef;
+  border-color: #d6d6d6;
+  border-left: 3px solid;
+}
+

@@ -1,0 +1,51 @@
+.ProjectItem {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e8eef1;
+    border-radius: 3px;
+    box-shadow: 0 0 14px 0 rgb(0 0 0 / 10%);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    transition: all .3s ease;
+    height: calc(100% - 20px);
+
+    &__title {
+        font-size: 18px;
+
+        a {
+            color: #252525;
+        }
+    }
+    &__punchline {
+        color: #6a6a6a;
+
+        a {
+            color:#f385ab;
+        }
+       
+    }
+
+    &__content {
+        padding: 0 20px;
+        height: 140px;
+    }
+
+    &__img {
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 260px;
+        background-color: #f4e1e8;
+    }
+
+    &__progress {
+       &-container {
+        margin: 0 20px 20px;
+       }
+
+        &-bar {
+            background-color: #96c746;
+            box-shadow:none;
+        }
+    }
+}

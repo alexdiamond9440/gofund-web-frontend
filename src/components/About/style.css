@@ -1,0 +1,345 @@
+.treasure-wrapper {
+    background-color: rgb(244, 133, 171);
+    min-height: 242px;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.treasure-wrapper h2 {
+    font-size: 50px;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.2px;
+    font-family: "Playfair Display", serif;
+    text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
+    text-align: center;
+}
+
+.our-story-wrap {
+    padding: 30px 0 50px;
+}
+
+.our-story-wrap .container {
+    max-width: 900px;
+}
+
+.supported-countries-wrap {
+    padding: 40px 0;
+    background: #f9f9f9;
+}
+
+.our-team-wrap {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 9px 12px rgb(0 0 0 / 16%);
+    margin-bottom: 30px;
+}
+
+.our-team-img {
+    overflow: hidden;
+}
+
+.our-team-img img {
+    width: 100%;
+    height: 280px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.our-team-title {
+    font-size: 20px;
+    color: #fff;
+    background: #f485ab;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 6px 12px;
+}
+
+.our-team-details {
+    padding: 12px 15px 20px;
+}
+
+.our-team-details p {
+    color: #6f6f6f;
+}
+
+.assistanc-freelanc-wrap {
+    margin-top: 50px;
+}
+
+.our-assistance {
+    position: relative;
+    border: solid 1px #ddd;
+    margin-bottom: 30px;
+}
+
+.our-assistance img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.our-assistance-details {
+    padding: 10px 25px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f485abe6;
+}
+
+.our-assistance-details .sub-title,
+.our-assistance-details .more-small-title {
+    color: #fff;
+}
+
+.chapter-team .our-team-title {
+    text-align: left;
+    padding-left: 20px;
+    background: transparent;
+    color: #f485ab;
+    padding-bottom: 2px;
+}
+
+.chapter-team .more-small-title {
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    color: #6f6f6f;
+}
+
+.founding-partners-wrap {
+    margin-top: 50px;
+}
+
+.founding-partners-wrap .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.our-found-patner {
+    padding: 0 0 6px;
+}
+
+.our-found-patner img {
+    max-width: 100%;
+    height: 320px;
+}
+
+.map-img {
+    max-width: 100%;
+}
+
+.chapter-team-img img {
+    width: 100%
+}
+
+.business-partner-logo.about-bus-partner {
+    align-items: center;
+}
+
+.business-partner-logo.about-bus-partner li:last-child img {
+    height: 135px;
+}
+
+.interns-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.video-banner-wrap iframe {
+    width: 100%;
+    height: 500px;
+    border: solid 8px #f485ab;
+    margin-bottom: 30px;
+}
+
+.intern-video iframe {
+    width: 100%;
+    height: 350px;
+    border: solid 5px #f485ab;
+}
+
+.read-more-btn {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    color: #f385ab;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.read-more-btn:hover {
+    background: transparent;
+}
+
+@media (max-width:1199px) {
+    .section-wrap {
+        padding: 25px 0;
+    }
+    .our-assistance img {
+        height: 250px;
+    }
+    .chapter-team .our-team-img img {
+        height: 240px;
+    }
+    .our-found-patner img {
+        height: 290px;
+    }
+}
+
+@media (max-width:991px) {
+    .container-sp {
+        max-width: 740px;
+        margin: 0 auto;
+    }
+    .our-team-img img {
+        height: 320px;
+    }
+    .our-assistance img {
+        height: 310px;
+    }
+    .chapter-team .our-team-img img {
+        height: 320px;
+    }
+    .our-found-patner img {
+        height: 340px;
+    }
+    .freelancer-wrapper.xs-partner-section {
+        padding: 30px 0;
+    }
+    .video-banner-wrap iframe {
+        height: 400px;
+    }
+    .intern-video iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width:767px) {
+    .container-sp {
+        max-width: 540px;
+    }
+    .assistanc-freelanc-wrap .row>div,
+    .interns-wrapper>div,
+    .chapter247-team-wrapper>div,
+    .founding-partners-wrap .row>div {
+        width: 50%;
+        float: left;
+    }
+    .our-team-img img {
+        height: 220px;
+    }
+    .our-team-details p {
+        font-size: 15px;
+    }
+    .our-assistance img {
+        height: 272px;
+    }
+    .chapter-team .our-team-img img {
+        height: 240px;
+    }
+    .our-found-patner img {
+        height: 240px;
+    }
+    .business-partner-logo.about-bus-partner li:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .business-partner-logo.about-bus-partner li:last-child img {
+        height: 160px;
+    }
+    .interns-wrapper .video-col {
+        width: 100%;
+    }
+    .video-banner-wrap iframe {
+        height: 350px;
+    }
+    .intern-video iframe {
+        height: 320px;
+    }
+}
+
+@media (max-width: 575px) {
+    .container-sp {
+        max-width: 400px;
+    }
+    .our-team-img img {
+        height: 300px;
+    }
+    .assistanc-freelanc-wrap .row>div,
+    .interns-wrapper>div,
+    .chapter247-team-wrapper>div,
+    .founding-partners-wrap .row>div {
+        width: 100%;
+        float: none;
+    }
+    .our-team-img img {
+        height: 320px;
+    }
+    .our-assistance img {
+        height: 370px;
+    }
+    .chapter-team .our-team-img img {
+        height: 370px;
+    }
+    .our-found-patner img {
+        height: 320px;
+    }
+    .business-partner-logo.about-bus-partner li:last-child img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 450px) {
+    .our-team-img img {
+        height: 290px;
+    }
+    .chapter-team .our-team-img img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 350px) {
+    .our-team-img img {
+        height: 250px;
+    }
+    .our-assistance img {
+        height: 300px;
+    }
+    .chapter-team .our-team-img img {
+        height: 300px;
+    }
+    .our-found-patner img {
+        height: 260px;
+    }
+}
+
+
+/* about team css start */
+
+.about-team {
+    position: relative;
+}
+
+.about-team-details {
+    text-align: left;
+    padding: 10px 25px;
+    text-transform: capitalize;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: #f485abe6;
+}
+
+
+/* about team css end */

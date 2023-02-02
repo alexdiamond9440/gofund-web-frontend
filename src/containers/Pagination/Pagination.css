@@ -1,0 +1,159 @@
+/* Declare some variables */
+/* $base-color: #ced4da;
+$light-background: lighten(desaturate($base-color, 50%), 12.5%); */
+
+.current-page {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.country-card-container {
+  height: 60px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.country-name {
+  font-size: 0.9rem;
+}
+
+.country-region {
+  font-size: 0.7rem;
+}
+
+.current-page,
+.country-name,
+.country-region {
+  line-height: 1;
+}
+
+/* Override some Bootstrap pagination styles */
+ul.pagination {
+  margin-top: 0;
+  margin-bottom: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+a.page-link {
+  padding: 0.75rem 1rem;
+  min-width: 3.5rem;
+  text-align: center;
+  box-shadow: none !important;
+
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.pagination-ol {
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center;
+	background: transparent;
+}
+.pagination-ol .breadcrumb-item {
+	position: relative;
+	line-height: 50px;
+	z-index: 2;
+	padding-left: 0;
+}
+.pagination-ol .breadcrumb-item.next {
+	margin-right: 5px;
+}
+
+.pagination-ol .breadcrumb-item:first-child:before {
+	content: '';
+	display: none;
+}
+
+.pagination-ol .breadcrumb-item.active:after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: #f385ab;
+	-webkit-transform: skew(-20deg);
+	-ms-transform: skew(-20deg);
+	transform: skew(-20deg);
+	z-index: -1;
+	opacity: 1;
+	visibility: visible;
+}
+
+.pagination-ol .breadcrumb-item.active:before {
+	background: #f385ab;
+}
+
+.pagination-ol .breadcrumb-item.active a {
+	color: #fff;
+}
+
+.pagination-ol .breadcrumb-item:after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: #f385ab;
+	-webkit-transform: skew(-20deg);
+	-ms-transform: skew(-20deg);
+	transform: skew(-20deg);
+	z-index: -1;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.pagination-ol .breadcrumb-item:hover a {
+	color: #252525;
+}
+
+.pagination-ol .breadcrumb-item:hover:after {
+	opacity: 1;
+	visibility: visible;
+}
+
+.pagination-ol .breadcrumb-item:hover:before {
+	background: #f385ab;
+}
+
+.pagination-ol .breadcrumb-item:before {
+	display: inline-block;
+	padding-right: 0;
+	color: #6c757d;
+	content: " ";
+	width: 1px;
+	height: 50px;
+	background: #e1e1e1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-transform: skew(-20deg);
+	-ms-transform: skew(-20deg);
+    transform: skew(-20deg);
+    padding: 0 1.5px;
+}
+
+.pagination-ol .breadcrumb-item a {
+	padding: 25px 25px;
+	color: #707070;
+	font-size: 16px;
+	font-family: "PT Sans", sans-serif;
+	font-weight: 400;
+}
+
+.breadcrumb-item:hover+.breadcrumb-item:before {
+	background: #f385ab;
+}
+
+.breadcrumb-item.active+.breadcrumb-item:before {
+	background: #f385ab;
+}

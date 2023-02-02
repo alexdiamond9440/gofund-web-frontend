@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Faith",
+    "imgPath": "/assets/img/charity-icons/faith.png"
+  },
+  {
+    "title": "Business",
+    "imgPath": "/assets/img/charity-icons/bussiness.png"
+  },
+  {
+    "title": "Education",
+    "imgPath": "/assets/img/charity-icons/education.png"
+  },
+  {
+    "title": "Health",
+    "imgPath": "/assets/img/charity-icons/health.png"
+  },
+  {
+    "title": "Charity",
+    "imgPath": "/assets/img/charity-icons/charity.png"
+  },
+  {
+    "title": "Events",
+    "imgPath": "/assets/img/charity-icons/event.png"
+  },
+  {
+    "title": "Art",
+    "imgPath": "/assets/img/charity-icons/art.png"
+  },
+  {
+    "title": "Travel",
+    "imgPath": "/assets/img/charity-icons/travel.png"
+  },
+  {
+    "title": "Sports",
+    "imgPath": "/assets/img/charity-icons/sport.png"
+  },
+  {
+    "title": "LGBTQ",
+    "imgPath": "/assets/img/charity-icons/LGTQ.png"
+  },
+  {
+    "title": "Violence",
+    "imgPath": "/assets/img/charity-icons/violence-against-women.png"
+  },
+  {
+    "title": "Child",
+    "imgPath": "/assets/img/charity-icons/family-planing.png"
+  },
+  {
+    "title": "Human trafficking",
+    "imgPath": "/assets/img/charity-icons/violence-against-women.png"
+  },
+  {
+    "title": "Family",
+    "imgPath": "/assets/img/charity-icons/family-planing.png"
+  },
+  {
+    "title": "War",
+    "imgPath": "/assets/img/charity-icons/war-crasis-man.png"
+  },
+  {
+    "title": "Politics",
+    "imgPath": "/assets/img/charity-icons/Politics.png"
+  },
+  {
+    "title": "Emergency",
+    "imgPath": "/assets/img/charity-icons/emergency-money.png"
+  },
+  {
+    "title": "Food",
+    "imgPath": "/assets/img/charity-icons/iced-tea.png"
+  },
+  {
+    "title": "Leadership",
+    "imgPath": "/assets/img/charity-icons/leadership.png"
+  },
+  {
+    "title": "Technology",
+    "imgPath": "/assets/img/charity-icons/technology.png"
+  }
+]

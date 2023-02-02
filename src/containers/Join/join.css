@@ -1,0 +1,85 @@
+.popover-title {
+    color: #606060;
+}
+.password-info li{
+    list-style-type: none;
+    color: #a2a2a2;
+}
+.password-info li img {
+  width: 17px;
+  height: 16px;
+  margin-right: 10px;
+}
+.input_details ul li.detail_item div.valid{
+    /* FIXME look where this image comes from */
+    /* background: url('/src/assets/img/_shared/valid_icons.gif') no-repeat; */
+}
+.has-error {
+    border-color: red !important;
+}
+.checkbox-label{
+    cursor:pointer;
+}
+.auth-warp .auth-block{
+    width: 100%;
+}
+.login-img-wrap .login-img{
+        position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-img-section{
+    width: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 60px); */
+}
+.login-img-wrap{
+    cursor: pointer;
+    min-width: 100%;
+    padding-top: 60%;
+    /* padding-top: 102%; */
+    position: relative;
+    overflow: hidden;
+}
+.flex-column {
+    -ms-flex-direction: column!important;
+    flex-direction: column!important;
+}
+.auth-image-block{
+    padding-top:30px;
+    padding-bottom:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+.login-text{
+    font-size: 25px;
+    color: #000;
+    margin-bottom: 20px;
+    font-family: "PT Sans", sans-serif;
+    position: relative;
+    text-align:center;
+}
+.login-text:before {
+    width: 100px;
+    height: 2px;
+    background-color: #f385ab;
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@media (max-width: 480px) {
+  .login-text{
+    font-size: 22px;
+    }
+}

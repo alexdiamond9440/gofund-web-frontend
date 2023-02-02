@@ -1,0 +1,84 @@
+.transation-main-section {
+  text-align: center;
+}
+.transation-main-section .nav-tabs {
+  display: block;
+}
+.transation-main-section .nav-tabs > li {
+  width: 1%;
+}
+.transation-heading-wrap i {
+  margin: 0px;
+}
+.transation-heading-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.transation-heading {
+  padding-left: 5px;
+}
+
+/* .trasation-main-section .project-bottom-wrap{
+  justify-content: center;
+} */
+.trasation-main-section .project-view-text {
+  padding-left: 0px;
+}
+.trasation-main-section .project-bottom-wrap {
+  margin: 15px -6px -15px -6px;
+}
+.trasation-main-section .project-view-block {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.trasation-main-section .product-title-box-projectname {
+  font-size: 13px;
+}
+.trasation-main-section .project-view-text-sub-wrap .product-title-tile,
+.trasation-main-section .project-view-text-sub-wrap .product-title-tile b {
+  font-size: 12px;
+}
+.trasation-main-section .checkbox-input {
+  font-size: 12px;
+}
+.trasation-main-section .count-wrap {
+  margin: -10px 0px 8px 0px;
+}
+/* .project-card.trasation-main-section .project-view-sub-wrap{
+  width: 33.33%;
+} */
+.project-card.trasation-main-section {
+  margin: 0px -30px 0px -30px;
+}
+.time-category-wrap {
+  display: flex;
+  background: #e5e5e5;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.time-category {
+  flex: 1;
+  padding: 8px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.time-category.active-category {
+  flex: 1;
+  background: #f485ab;
+  padding: 8px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.d-none{
+  display:none;
+}
+.phone-field{
+  margin-top: 2px;
+}
+.mobile_payment .phone{
+  color: #f485ab;
+}
