@@ -17,7 +17,7 @@ Using Putty or XShell to connect AWS EC2 instance that the project will be deplo
 > npm install
 
 ## Setup configuration
-Rename .env.production to .env and check its content.
+Rename .env.staging to .env and update the values for production.
 
 # Build frontend files
 > npm build
