@@ -506,9 +506,9 @@ class MyProjects extends Component {
                   ) : (
                     <div className="project-not-found text-center">
                       <h3 className="pb-3">Looks like you haven't created any sponsor page yet.</h3>
-                      <Link className="btn btn-donate-big" to="/start">
+                      <button className="btn btn-donate-big" onClick={() => window.location.href = "/start"}>
                         Add Sponsor Page
-                      </Link>
+                      </button>
                     </div>
                   )
                 ) : (
