@@ -340,11 +340,10 @@ class MyProjects extends Component {
                                 <div
                                   className="project-view-image"
                                   style={{
-                                    backgroundImage: `url(${
-                                      project.thumbnail_image
-                                        ? [Backend_url, project.thumbnail_image].join('').trim()
-                                        : '/assets/img/no-image-available.svg'
-                                    })`
+                                    backgroundImage: `url(${project.thumbnail_image
+                                      ? [Backend_url, project.thumbnail_image].join('').trim()
+                                      : '/assets/img/no-image-available.svg'
+                                      })`
                                   }}
                                 />
                                 <div className="project-view-block">
@@ -400,9 +399,9 @@ class MyProjects extends Component {
                                             <b>$</b>
                                             {project.amount
                                               ? Intl.NumberFormat('en-US', {
-                                                  minimumFractionDigits: 2,
-                                                  maximumFractionDigits: 2
-                                                }).format(parseInt(project.amount))
+                                                minimumFractionDigits: 2,
+                                                maximumFractionDigits: 2
+                                              }).format(parseInt(project.amount))
                                               : 0.0}
                                           </span>
                                         </div>
@@ -413,9 +412,9 @@ class MyProjects extends Component {
                                             <b>$</b>
                                             {project.total_pledged
                                               ? Intl.NumberFormat('en-US', {
-                                                  minimumFractionDigits: 2,
-                                                  maximumFractionDigits: 2
-                                                }).format(Number(project.total_pledged))
+                                                minimumFractionDigits: 2,
+                                                maximumFractionDigits: 2
+                                              }).format(Number(project.total_pledged))
                                               : 0.0}
                                           </span>
                                         </div>

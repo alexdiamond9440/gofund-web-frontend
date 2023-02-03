@@ -42,7 +42,7 @@ class SearchBlock extends Component {
               placeholder="Search"
               onChange={this.props.handleChange}
             />
-            {name ? (<div className="search-btn" onClick={this.props.handleSubmit}>Search</div>) : null}
+            {name ? (<div className="btn-donate-big search-btn" onClick={this.props.handleSubmit}>Search</div>) : null}
           </div>
         </div>
         {projectList ? (
