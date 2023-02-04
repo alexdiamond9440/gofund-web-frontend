@@ -105,13 +105,7 @@ class Footer extends Component {
                       <img width="36px" src="/assets/img/icons/facebook-icon.svg" alt="facebook" />
                     </a>
                     <a
-                      href="https://twitter.com/_gofundher"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      <img width="36px" src="/assets/img/icons/twitter-icon.svg" alt="twitter" />
-                    </a>
-                    <a
-                      href="https://www.instagram.com/_gofundher/?hl=en"
+                      href="https://instagram.com/gofundher.com_?igshid=ZDdkNTZiNTM="
                       target="_blank"
                       rel="noopener noreferrer">
                       <img
