@@ -41,7 +41,7 @@ class Project extends React.Component {
   }
 
   handleAuthentication = async () => {
-    const currentUser = this.context;
+    const currentUser = this.props.user;
 
     if (!currentUser) {
       this.props.history.replace({
@@ -83,7 +83,7 @@ class Project extends React.Component {
           status
         } = projectData;
 
-        const user = this.context;
+        const user = currentUser;
         if (this.props.match.params.projectUrl && user.userId !== userId) {
           toastr.error('Error', 'You can not make changes on these project');
           this.props.history.push('/my-sponsor-pages');

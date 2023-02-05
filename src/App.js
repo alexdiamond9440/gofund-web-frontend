@@ -122,7 +122,7 @@ const App = () => {
       if (storedUser) {
         setUser(storedUser);
       }
-    } catch (error) {}
+    } catch (error) { }
   }, []);
 
   return (
