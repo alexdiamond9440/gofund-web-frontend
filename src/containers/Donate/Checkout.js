@@ -44,9 +44,9 @@ class Checkout extends Component {
     this.setState({
       name: currentUser
         ? [
-            this.props.profileData.profileInfo.first_name,
-            this.props.profileData.profileInfo.last_name
-          ].join(' ')
+          this.props.profileData.profileInfo.first_name,
+          this.props.profileData.profileInfo.last_name
+        ].join(' ')
         : name,
       email: currentUser ? this.props.profileData.profileInfo.email : email
     });
@@ -96,7 +96,7 @@ class Checkout extends Component {
       this.setState(() => ({
         stripeClientSecret: response.data.clientSecret
       }));
-    } catch (error) {}
+    } catch (error) { }
   };
 
   handleChange = (event) => {
@@ -368,9 +368,8 @@ export const StripeModalBody = ({
 
                 <div className="disabled-wrap">
                   <button
-                    className={`btn btn-donate-big btn-pay ${
-                      !isStripeConnected ? 'donate-disbaled-btn' : ''
-                    }`}
+                    className={`btn btn-donate-big btn-pay ${!isStripeConnected ? 'donate-disbaled-btn' : ''
+                      }`}
                     disabled
                     type="button">
                     <FormattedAmount amount={amount} />
@@ -379,7 +378,7 @@ export const StripeModalBody = ({
                 </div>
               </div>
             )}
-           <PaypalCheckout
+            <PaypalCheckout
               isStripeConnected={isStripeConnected}
               onSuccessRedirect={handlePaymentSuccessRedirect}
               amount={amount}
@@ -503,11 +502,11 @@ export const FormattedAmount = ({ amount }) => {
     <span className="donate-amount-pay">
       {amount
         ? new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-          }).format(amount)
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }).format(amount)
         : '$0.00'}{' '}
     </span>
   );

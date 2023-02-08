@@ -533,7 +533,7 @@ class MyProfile extends Component {
                             value={userData.bio}
                             name="bio"
                             maxLength={500}
-                            //required
+                          //required
                           />
                           <div className="text-danger">{errors && errors.bio}</div>
                         </div>
@@ -777,7 +777,6 @@ export const ProfileAvatar = (props) => {
             <>
               <button
                 style={{
-                  zIndex: 999999,
                   position: 'relative',
                   backgroundColor: 'transparent',
                   borderWidth: 0
