@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import * as moment from 'moment';
 import Reaptcha from 'reaptcha';
 import Swal from 'sweetalert2';
-import { frontUrl, removeImgTagRegex, youtubeVideoBaseUrl } from './../../constants';
+import { Backend_url, frontUrl, removeImgTagRegex, youtubeVideoBaseUrl } from './../../constants';
 import { validator } from './../../helpers/validator';
 import { generateEmbeddedUrl } from '../../helpers/embeddedURL';
 import Loader from '../../components/Loader';
@@ -242,13 +242,13 @@ class ProjectDetail extends Component {
     const formValidation = validator(
       !profileInfo.id
         ? {
-            firstName: name,
-            email: email,
-            text: text
-          }
+          firstName: name,
+          email: email,
+          text: text
+        }
         : {
-            text: text
-          }
+          text: text
+        }
     );
 
     const projectId = projectData.id;
@@ -488,7 +488,7 @@ class ProjectDetail extends Component {
                           </span>
                         </span>
                         {(projectData.category && projectData.category !== 'Select Category') ||
-                        projectData.project_location ? (
+                          projectData.project_location ? (
                           <span className="separet-span">|</span>
                         ) : null}
                       </li>
@@ -522,7 +522,7 @@ class ProjectDetail extends Component {
                   <div className="project-detail">
                     <div className="project-image project-image-desktop">
                       <img
-                        src={`${[frontUrl, projectData.featured_image].join('').trim()}`}
+                        src={`${[Backend_url, projectData.featured_image].join('').trim()}`}
                         alt="img"
                       />
                     </div>
@@ -601,9 +601,9 @@ class ProjectDetail extends Component {
                                       dangerouslySetInnerHTML={{
                                         __html: isIamgeStarting
                                           ? projectData.description &&
-                                            projectData.description.substr(0, imagePosition)
+                                          projectData.description.substr(0, imagePosition)
                                           : projectData.description &&
-                                            projectData.description.substr(0, 1000)
+                                          projectData.description.substr(0, 1000)
                                       }}
                                     />
                                   )}
@@ -851,7 +851,7 @@ class ProjectDetail extends Component {
                                                           {moment(item.createdAt).format(
                                                             'DDMMYYYY'
                                                           ) ===
-                                                          moment(new Date()).format('DDMMYYYY') ? (
+                                                            moment(new Date()).format('DDMMYYYY') ? (
                                                             <span>
                                                               {moment(item.createdAt).fromNow()}
                                                             </span>
@@ -881,7 +881,7 @@ class ProjectDetail extends Component {
                                                                 this.changeState(index)
                                                               }>
                                                               {isExpand &&
-                                                              this.state.index === index
+                                                                this.state.index === index
                                                                 ? ' ...show less'
                                                                 : ' ...show more'}
                                                             </span>
@@ -896,39 +896,39 @@ class ProjectDetail extends Component {
                                             <ul className="media-list">
                                               {item.reply
                                                 ? item.reply.map((element, index) => {
-                                                    return (
-                                                      <li className="media">
-                                                        {/* eslint-disable-next-line */}
-                                                        <a
-                                                          href="#"
-                                                          className="pull-left comment-img">
-                                                          <img
-                                                            src="https://bootdey.com/img/Content/user_1.jpg"
-                                                            alt=""
-                                                            className="img-circle"
-                                                            height={50}
-                                                          />
-                                                        </a>
-                                                        <div className="media-body">
-                                                          <div className="comment-text-block">
-                                                            <div className=" comment-text-heading">
-                                                              <strong> {element.user_Name}</strong>
-                                                              <span className="text-muted pull-right time-wrap">
-                                                                <small className="text-muted">
-                                                                  {moment(element.createdAt).format(
-                                                                    'lll'
-                                                                  )}
-                                                                </small>
-                                                              </span>
-                                                            </div>
-                                                            <p className="comment-text-sub-heading">
-                                                              {element.comment}
-                                                            </p>
+                                                  return (
+                                                    <li className="media">
+                                                      {/* eslint-disable-next-line */}
+                                                      <a
+                                                        href="#"
+                                                        className="pull-left comment-img">
+                                                        <img
+                                                          src="https://bootdey.com/img/Content/user_1.jpg"
+                                                          alt=""
+                                                          className="img-circle"
+                                                          height={50}
+                                                        />
+                                                      </a>
+                                                      <div className="media-body">
+                                                        <div className="comment-text-block">
+                                                          <div className=" comment-text-heading">
+                                                            <strong> {element.user_Name}</strong>
+                                                            <span className="text-muted pull-right time-wrap">
+                                                              <small className="text-muted">
+                                                                {moment(element.createdAt).format(
+                                                                  'lll'
+                                                                )}
+                                                              </small>
+                                                            </span>
                                                           </div>
+                                                          <p className="comment-text-sub-heading">
+                                                            {element.comment}
+                                                          </p>
                                                         </div>
-                                                      </li>
-                                                    );
-                                                  })
+                                                      </div>
+                                                    </li>
+                                                  );
+                                                })
                                                 : null}
                                             </ul>
                                           </div>
@@ -959,7 +959,7 @@ class ProjectDetail extends Component {
               <div className="col-md-12 col-lg-4 right-sidebar">
                 <div className="project-image project-image-mobile">
                   <img
-                    src={`${[frontUrl, projectData.featured_image].join('').trim()}`}
+                    src={`${[Backend_url, projectData.featured_image].join('').trim()}`}
                     alt="img"
                   />
                 </div>
@@ -970,9 +970,9 @@ class ProjectDetail extends Component {
                     $
                     {projectData.total_pledged
                       ? new Intl.NumberFormat('en-US', {
-                          minimumFractionDigits: 2,
-                          maximumFractionDigits: 2
-                        }).format(projectData.total_pledged)
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                      }).format(projectData.total_pledged)
                       : '0.00'}
                   </p>
                   <p className="project-price-subtext">
@@ -982,9 +982,9 @@ class ProjectDetail extends Component {
                       $
                       {projectData.amount
                         ? new Intl.NumberFormat('en-US', {
-                            minimumFractionDigits: 2,
-                            maximumFractionDigits: 2
-                          }).format(projectData.amount)
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2
+                        }).format(projectData.amount)
                         : '0.00'}
                     </span>{' '}
                     goal

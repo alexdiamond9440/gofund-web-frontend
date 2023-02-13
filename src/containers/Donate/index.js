@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Checkout from './Checkout';
@@ -150,7 +151,9 @@ class Donate extends Component {
   };
 
   makePledge = () => {
-    const currentUser = this.context;
+    // const currentUser = this.context;
+    const currentUser = this.props.user;
+    console.log(currentUser);
 
     if (currentUser) {
       this.setState({
@@ -311,9 +314,8 @@ class Donate extends Component {
                                           One Time
                                         </button>
                                         <button
-                                          className={`btn btn-recurring mt-0 ${
-                                            monthly && 'active'
-                                          }`}
+                                          className={`btn btn-recurring mt-0 ${monthly && 'active'
+                                            }`}
                                           onClick={() => this.handleRecurring('monthly')}>
                                           Monthly
                                         </button>
@@ -397,9 +399,8 @@ class Donate extends Component {
                                           </div>
                                         </div>
                                         <div
-                                          className={`input-group select-tip-wrap mt-0 ${
-                                            toggle ? 'tip-select-wrap' : 'tip-select-hide-wrap'
-                                          }`}>
+                                          className={`input-group select-tip-wrap mt-0 ${toggle ? 'tip-select-wrap' : 'tip-select-hide-wrap'
+                                            }`}>
                                           <select
                                             name="payTip"
                                             value={payTip}
@@ -547,4 +548,14 @@ class Donate extends Component {
 
 Donate.contextType = UserContext;
 
-export default Donate;
+const mapStateToProps = (state) => {
+  const { user } = state.LoginReducer;
+  const { profileInfo } = state.ProfileReducer;
+  return {
+    user,
+    profileInfo
+  };
+};
+
+export default connect(mapStateToProps)(Donate);
+//export default Donate;

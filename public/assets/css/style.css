@@ -5,6 +5,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 @import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i");
+
 body {
     font-family: "PT Sans", sans-serif;
     font-size: 14px;
@@ -1704,9 +1705,6 @@ span.changeProfile input {
 
 /* ================End myprojects CSS =============== */
 
-.project-view-image {
-    background-size: cover;
-}
 
 .project-view-text-wrap {
     display: flex;
@@ -1716,9 +1714,9 @@ span.changeProfile input {
 .project-view-sub-wrap {
     width: 50%;
     margin: 15px;
-    border-radius:7px;
+    border-radius: 7px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .project-view-block {
@@ -1729,15 +1727,19 @@ span.changeProfile input {
 }
 
 .project-view-image {
-    /* height: 120px; */
-    position: relative;
-    min-width: 130px;
-    max-width: 130px;
-    display: flex;
-    align-items: center;
+    width: 35%;
     background-color: #dedede;
     padding: 5px;
     /* margin: 0 auto; */
+    text-align: center;
+    position: relative;
+}
+
+.project-view-image img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .project-view-inner-wrap .status-btn {
@@ -2267,9 +2269,10 @@ a {
     z-index: 999;
     margin-top: 82px;
     left: 0;
-    padding:0 15px;
+    padding: 0 15px;
     width: 100% !important;
 }
+
 .profile-text .checkout-btn {
     max-width: 100%;
     width: 100%;
@@ -2761,6 +2764,10 @@ a {
     border-bottom: 0px;
 }
 
+.project-thumb-image {
+    width: 40%;
+}
+
 .modal-dialog {
     z-index: 9999;
 }
@@ -2808,6 +2815,7 @@ a {
     .page-404-wrap img {
         padding: 0px 15%;
     }
+
     /* .reaptcha-wrap .g-recaptcha iframe {
     max-width:243px !important;
   } */
@@ -2817,6 +2825,7 @@ a {
     .project-view-sub-wrap {
         width: 100%;
     }
+
     .project-view-block {
         width: 100%;
     }
@@ -2826,9 +2835,11 @@ a {
     .project-view-sub-wrap {
         width: 100%;
     }
+
     .project-view-block {
         width: 100%;
     }
+
     .tip-amount-wrap.new-my {
         margin-top: 10px;
     }
@@ -2838,35 +2849,43 @@ a {
     .project-view-inner-wrap {
         flex-wrap: wrap;
     }
+
     .project-view-image {
         width: 100%;
         max-width: 100%;
+        height: 300px;
     }
+
     /* .sm-status {
     position: absolute;
   } */
     .sm-relative {
         position: relative;
     }
+
     .sm-status {
         position: absolute;
         top: -178px;
         right: -165px;
     }
+
     .btn-search {
         width: 100%;
     }
+
     .filter-btn {
         position: relative;
         left: -7px;
         top: 0px;
         width: 90%;
     }
+
     .search-text {
         display: inline-block;
         margin-left: 10px;
         color: white;
     }
+
     .fa-search {
         color: white;
     }
@@ -3291,9 +3310,11 @@ a {
     .youtube-video iframe {
         height: 425px;
     }
+
     .mission-para {
         margin-top: 10px;
     }
+
     .img-block img {
         height: 450px;
         width: 100%;
@@ -3308,9 +3329,11 @@ a {
     .mobile-view-donation {
         /* display: block; */
     }
+
     .desktop-view-donation {
         /* display: none; */
     }
+
     .filter-table-box {
         margin-top: 20px;
     }
@@ -3331,6 +3354,7 @@ a {
 }
 
 @media screen and (max-width: 575px) {
+
     #rc-imageselect,
     .g-recaptcha {
         transform: scale(0.85);
@@ -3338,6 +3362,7 @@ a {
         transform-origin: 0 0;
         -webkit-transform-origin: 0 0;
     }
+
     .filter-table-box {
         position: relative;
         top: -55px;
@@ -3380,6 +3405,7 @@ a {
     .tip-select-hide-wrap {
         display: none;
     }
+
     .profile-tip-detail-wrap .select-tip-wrap {
         margin-top: 10px;
     }
@@ -3506,6 +3532,7 @@ a {
         margin-right: 4px;
         font-size: 12px;
     }
+
     .profile-edit-icon {
         right: 6px;
         padding: 5px 12px 6px !important;
@@ -3626,6 +3653,7 @@ a {
     .single-causes .cause-content h5 {
         word-break: break-all;
     }
+
     .select-wrap .new-select-box .select-label {
         top: 0px;
         left: 0px;
@@ -3682,6 +3710,7 @@ a {
         flex-flow: column;
         align-items: flex-start;
     }
+
     .project-toggle .switch {
         margin-bottom: 8px;
     }
@@ -3817,12 +3846,14 @@ a {
 }
 
 @media (max-width: 321px) {
+
     /* .dropbtn {
     margin-top: 32px;
   } */
     .filter-btn {
         width: 52%;
     }
+
     .sm-status {
         top: -240px;
         left: 136px;
@@ -3842,19 +3873,23 @@ a {
         flex-flow: column;
         border: 0px;
     }
+
     .duration-form .form-control {
         border: 1px solid #f485ab;
         margin-bottom: 15px;
     }
+
     .duration-form .DateRangePickerInput__withBorder {
         border: 1px solid #f485ab;
         width: 180px;
         margin-left: 0px;
     }
+
     .DateRangePicker_picker {
         width: 280px;
         left: -9px !important;
     }
+
     .btn-next {
         margin-left: 180px !important;
     }
@@ -4100,9 +4135,11 @@ a {
         flex-flow: column;
         align-items: flex-start;
     }
+
     .btn-next {
         margin-left: 230px !important;
     }
+
     .personal-id-value {
         align-self: flex-end;
         margin-top: 5px;
@@ -4284,30 +4321,37 @@ a {
     .filter-row .form-control {
         width: 115px;
     }
+
     .nodata-found .btn-donate-big {
         padding: 16px 20px 20px 16px;
         min-width: 160px;
         font-size: 15px;
     }
+
     .filter-row .form-group {
         margin-right: 10px;
     }
+
     .sm-relatve {
         position: relative;
     }
+
     .sm-status {
         position: absolute;
         top: -178px;
         left: 168px;
     }
+
     .btn-search {
         width: 100%;
     }
+
     .filter-row {
         flex-direction: column;
         align-items: flex-start;
         margin-top: 76px;
     }
+
     .filter-btn {
         position: relative;
         top: 0px;
@@ -4317,14 +4361,17 @@ a {
         width: 100%;
         gap: 10px;
     }
+
     .search-text {
         display: inline-block;
         margin-left: 10px;
         color: white;
     }
+
     .fa-search {
         color: white;
     }
+
     .report-drop {
         float: left;
     }
@@ -4344,9 +4391,11 @@ a {
     .hide-for-mobile {
         display: none;
     }
+
     .hide-for-desktop {
         display: unset;
     }
+
     .report-drop.moneyin-report {
         float: left;
         margin-bottom: 20px;

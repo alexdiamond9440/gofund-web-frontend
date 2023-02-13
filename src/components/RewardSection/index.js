@@ -10,7 +10,7 @@ const RewardSection = (props) => {
       if (reward.reward_image) {
         image = JSON.parse(reward.reward_image);
       }
-    } catch (e) {}
+    } catch (e) { }
     return (
       <li className="reward-block" key={index}>
         <div className="reward-inner-block" style={{ display: 'flex', alignItems: 'flex-start' }}>

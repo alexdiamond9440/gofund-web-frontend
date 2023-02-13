@@ -337,15 +337,12 @@ class MyProjects extends Component {
                           return (
                             <div className="project-view-sub-wrap" key={index}>
                               <div className="project-view-inner-wrap">
-                                <div
-                                  className="project-view-image"
-                                  style={{
-                                    backgroundImage: `url(${project.thumbnail_image
-                                      ? [Backend_url, project.thumbnail_image].join('').trim()
-                                      : '/assets/img/no-image-available.svg'
-                                      })`
-                                  }}
-                                />
+                                <div class="project-view-image">
+                                  <img src={project.thumbnail_image
+                                    ? [Backend_url, project.thumbnail_image].join('').trim()
+                                    : '/assets/img/no-image-available.svg'
+                                  } />
+                                </div>
                                 <div className="project-view-block">
                                   <div className="count-wrap">
                                     <div className="count-no">

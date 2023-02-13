@@ -12,6 +12,8 @@ const DonateConfirm = (props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    console.log(state);
+    console.log(user);
     if (!state || (state.userId && user && state.userId !== user.userId)) {
       history.replace('/404');
       return null;

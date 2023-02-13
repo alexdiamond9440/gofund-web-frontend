@@ -52,8 +52,7 @@ function DeleteAccount() {
         </div>
         <div className='col-md-12'>
           <div className='delete-account-info'>
-            Once you delete your account, there is no going back. Please be
-            certain.
+            Deleting your account and fundraising data is permanent. Your information can not be recovered.
           </div>
           <div className='delete-acc-btn-wrapper'>
             <Button
