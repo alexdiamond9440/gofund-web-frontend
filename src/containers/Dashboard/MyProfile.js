@@ -40,6 +40,7 @@ class MyProfile extends Component {
   };
 
   componentDidMount = () => {
+    console.log(this.state.userData);
     if (this.state.profileUrlExist) {
       this.setState({
         profileUrlExist: false
@@ -176,6 +177,7 @@ class MyProfile extends Component {
 
   render() {
     const { userData, errors, isDataLoading } = this.state;
+    console.log(userData);
 
     const state = StateData.map((stateItem, index) => {
       return (
@@ -604,8 +606,10 @@ class MyProfile extends Component {
   }
 }
 const mapStateToProps = (state) => {
+  const { user } = state.LoginReducer;
   const { profileInfo } = state.ProfileReducer;
   return {
+    user,
     profileInfo
   };
 };

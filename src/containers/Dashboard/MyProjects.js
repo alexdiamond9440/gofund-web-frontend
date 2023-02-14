@@ -337,7 +337,7 @@ class MyProjects extends Component {
                           return (
                             <div className="project-view-sub-wrap" key={index}>
                               <div className="project-view-inner-wrap">
-                                <div class="project-view-image">
+                                <div className="project-view-image">
                                   <img src={project.thumbnail_image
                                     ? [Backend_url, project.thumbnail_image].join('').trim()
                                     : '/assets/img/no-image-available.svg'

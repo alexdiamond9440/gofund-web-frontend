@@ -20,6 +20,8 @@ export function login(data, urlToredirect) {
           ? response.data.token
           : "";
         dispatch(success(authData));
+        dispatch(profile_success(response.data.data));
+
         if (urlToredirect) {
           dispatch(push(urlToredirect));
         } else {
@@ -53,7 +55,7 @@ export function socialLogin(data, urlToredirect) {
         if (urlToredirect) {
           dispatch(push(urlToredirect));
         } else {
-        dispatch(push("/my-sponsor-pages"));
+          dispatch(push("/my-sponsor-pages"));
         }
         // dispatch(push("/my-projects"));
       })
@@ -70,6 +72,9 @@ function request(user) {
 }
 function success(user) {
   return { type: actionTypes.LOGIN_SUCCESS, user };
+}
+function profile_success(profile) {
+  return { type: actionTypes.PROFILEINFO_SUCCESS, profile };
 }
 function failure(error) {
   return { type: actionTypes.LOGIN_FAILURE, error };

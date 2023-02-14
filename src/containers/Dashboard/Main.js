@@ -10,6 +10,7 @@ import '../../../node_modules/croppie/croppie.css';
 import { ProfileAvatar } from './MyProfile';
 
 const Main = (props) => {
+  console.log(props.user, props.profileInfo);
   const createdDate = moment(props.profileInfo.createdAt).format('LL');
   return (
     <div className="col-md-10 col-sm-9 dashboard-right-warp">
@@ -166,8 +167,10 @@ const Main = (props) => {
 };
 
 const mapStateToProps = (state) => {
+  const { user } = state.LoginReducer;
   const { profileInfo } = state.ProfileReducer;
   return {
+    user,
     profileInfo
   };
 };

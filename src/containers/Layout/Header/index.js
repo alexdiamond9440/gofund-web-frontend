@@ -38,11 +38,11 @@ const Header = (props) => {
     ReactGA.pageview(window.location.pathname + window.location.search);
     getProfileInfo();
   }, [getProfileInfo]);
-
-  useEffect(() => {
-    getProfileInfo();
-  }, [loginState.isloggedIn, getProfileInfo]);
-
+  /*
+    useEffect(() => {
+      getProfileInfo();
+    }, [loginState.isloggedIn, getProfileInfo]);
+  */
   useEffect(() => {
     document.addEventListener('click', handleClick, false);
 
@@ -156,11 +156,11 @@ const Header = (props) => {
                 id="basic-nav-dropdown"
                 className={
                   pathname === '/dashboard' ||
-                  pathname === '/my-sponsor-pages' ||
-                  pathname === '/get-paid-now' ||
-                  pathname === '/my-profile' ||
-                  pathname === '/transactions' ||
-                  pathname === '/change-password'
+                    pathname === '/my-sponsor-pages' ||
+                    pathname === '/get-paid-now' ||
+                    pathname === '/my-profile' ||
+                    pathname === '/transactions' ||
+                    pathname === '/change-password'
                     ? 'active'
                     : ''
                 }>

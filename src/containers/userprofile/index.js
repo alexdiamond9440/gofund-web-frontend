@@ -15,7 +15,8 @@ import {
   youtubeUserBaseUrl,
   tiktokBaseUrl,
   whatsappBaseUrl,
-  twitchBaseUrl
+  twitchBaseUrl,
+  Backend_url
 } from '../../constants';
 import { generateEmbeddedUrl } from '../../helpers/embeddedURL';
 import Loader from '../../components/Loader';
@@ -216,7 +217,7 @@ class Userprofile extends Component {
     const imageUrl =
       user.avatar && user.avatar.search('https://') > -1
         ? user.avatar.replace('s96-c', 's256-c') //for google picture size
-        : `${frontUrl}${user.avatar}`;
+        : `${Backend_url}${user.avatar}`;
 
     let totalAmount = amount ? parseFloat(amount) : 0;
     let tipAmount = 0;
@@ -278,13 +279,13 @@ class Userprofile extends Component {
                     </div>
                     <h1>{user.first_name ? [user.first_name, user.last_name].join(' ') : null}</h1>
                     {user.facebook ||
-                    user.twitter ||
-                    user.instagram ||
-                    user.youtube ||
-                    user.linkedin ||
-                    user.whatsapp ||
-                    user.twitch ||
-                    user.tiktok ? (
+                      user.twitter ||
+                      user.instagram ||
+                      user.youtube ||
+                      user.linkedin ||
+                      user.whatsapp ||
+                      user.twitch ||
+                      user.tiktok ? (
                       <div className="social-media-links">
                         <div className="social-wrap">
                           {user.facebook ? (
@@ -402,9 +403,8 @@ class Userprofile extends Component {
                       ) : null}
                       {user.personal_website ? (
                         <a
-                          href={`${isUrlWithoutProtocol(user.personal_website) ? '//' : ''}${
-                            user.personal_website
-                          }`}
+                          href={`${isUrlWithoutProtocol(user.personal_website) ? '//' : ''}${user.personal_website
+                            }`}
                           rel="noopener noreferrer"
                           className="intro-links word-wrap"
                           target="blank">
@@ -537,9 +537,8 @@ class Userprofile extends Component {
                           </div>
                           <div className="profile-tip-detail-wrap">
                             <div
-                              className={`input-group select-tip-wrap m-t-5 ${
-                                toggle ? 'tip-select-wrap' : 'tip-select-hide-wrap '
-                              }`}>
+                              className={`input-group select-tip-wrap m-t-5 ${toggle ? 'tip-select-wrap' : 'tip-select-hide-wrap '
+                                }`}>
                               <select
                                 name="payTip"
                                 value={payTip}

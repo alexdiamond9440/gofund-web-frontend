@@ -367,7 +367,7 @@ class DonationSetting extends Component {
               }
             });
           })
-          .catch((err) => {});
+          .catch((err) => { });
         // }
       };
     } else {
@@ -682,19 +682,19 @@ class DonationSetting extends Component {
                     accountType === 'custom' &&
                     paymentMethod === 'stripe' && (
                       <>
-                        {details_submitted &&
+                        {(details_submitted &&
                           verification.errors &&
                           verification.errors.length &&
                           verification.errors[0].requirement !==
-                            'legal_entity.verification.document' && (
-                            <div className="general-error-message">
-                              <span>{verification.errors[0].reason}</span>
-                            </div>
-                          )}
+                          'legal_entity.verification.document') ? (
+                          <div className="general-error-message">
+                            <span>{verification.errors[0].reason}</span>
+                          </div>
+                        ) : null}
                         <div className="add-account">
                           <div>
                             <h4>
-                              Bank accounts or debit cards{' '}
+                              Bank accounts or debit cards
                               <span>
                                 <OverlayTrigger
                                   overlay={
@@ -704,7 +704,7 @@ class DonationSetting extends Component {
                                   }
                                   placement="top">
                                   <i className="fas fa-info-circle" />
-                                </OverlayTrigger>{' '}
+                                </OverlayTrigger>
                               </span>
                             </h4>
                           </div>
