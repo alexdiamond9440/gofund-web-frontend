@@ -1,6 +1,7 @@
 a {
   text-decoration: none;
 }
+
 .event-details-section {
   margin: 50px 0 25px 0px;
 }
@@ -8,6 +9,7 @@ a {
 .event-details-section .event-details-content.style-two {
   padding: 0;
 }
+
 .event-details-section .event-details-content.style-two .single-event {
   border: 0;
   margin-bottom: 0;
@@ -18,6 +20,7 @@ a {
   margin-top: 0px;
   margin-bottom: 20px;
 }
+
 .single-event img {
   width: 100%;
 }
@@ -76,37 +79,38 @@ a {
   font-family: "PT Sans", sans-serif;
   font-weight: 600;
 }
+
 .separet-span {
   padding: 0px 15px;
 }
+
 .single-event .cause-details .cause-info li i {
   margin-right: 8px;
 }
+
 .single-event .cause-details .cause-info li span {
   white-space: nowrap;
 }
+
 .single-event .cause-details .cause-info li {
   display: flex;
   align-items: center;
 }
+
 .single-event .cause-details .cause-info li.address-wrap span {
   white-space: normal;
 }
+
 .single-event .cause-details .cause-info li a {
   color: #a1a1a1;
   font-size: 14px;
 }
-.event-details-section
-  .event-details-content.style-two
-  .cause-details
-  .cause-info {
+
+.event-details-section .event-details-content.style-two .cause-details .cause-info {
   margin-bottom: 10px;
 }
-.event-details-section
-  .event-details-content
-  .event-pages-link
-  .previusnext-page-link
-  a {
+
+.event-details-section .event-details-content .event-pages-link .previusnext-page-link a {
   color: #707070;
   margin-right: 20px;
   border-bottom: 1px solid #707070;
@@ -119,18 +123,17 @@ a {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.event-details-section
-  .event-details-content
-  .event-pages-link
-  .previusnext-page-link
-  a:hover {
+
+.event-details-section .event-details-content .event-pages-link .previusnext-page-link a:hover {
   color: #000;
 }
+
 @media all and (max-width: 767px) {
   .single-event .cause-details {
     padding: 20px 0px 0px 0px;
     margin-top: 0px;
   }
+
   .single-event .cause-details h4 a {
     font-size: 20px;
   }
@@ -182,10 +185,12 @@ a {
   background: #222;
   /* background: url("/src/assets/img/event/04_Events-Details.jpg"); */
 }
+
 .donate-videos-wraper {
   max-width: 100%;
   width: 100% !important;
 }
+
 .sidebar-image .event-details-time {
   color: #ffffff;
   padding-top: 30px;
@@ -261,6 +266,7 @@ a {
   -ms-flex-pack: distribute;
   justify-content: space-around;
 }
+
 .widget-select-rewards h4 {
   font-size: 22px;
   margin-bottom: 21px;
@@ -268,6 +274,7 @@ a {
   font-weight: 400;
   line-height: 26px;
 }
+
 .widget-select-rewards .single-widget {
   border: 1px solid #ddd;
   padding: 10px 15px 0px 15px;
@@ -278,6 +285,7 @@ a {
   border-color: #e8eef1;
   cursor: pointer;
 }
+
 .widget-select-rewards .widget-text-tile h1 {
   color: #252525;
   margin-bottom: 0px;
@@ -287,6 +295,7 @@ a {
   line-height: 30px;
   margin-top: 0;
 }
+
 .widget-select-rewards .widget-text-tile h2 {
   color: #000000;
   margin-bottom: 0px;
@@ -297,10 +306,12 @@ a {
   margin-top: 10px;
   text-shadow: 0 0px 0px #000;
 }
+
 .widget-select-rewards .widget-text-tile p {
   font-size: 14px;
   line-height: 1.4;
 }
+
 .widget-select-rewards a {
   text-decoration: none;
   color: #000000;
@@ -310,16 +321,19 @@ a {
   font-size: 20px;
   font-weight: 600;
 }
+
 .date-delivery span {
   color: #6f6f6f;
   font-size: 12px;
   font-family: "PT Sans", sans-serif;
   box-shadow: 0 0 0 #6f6f6f;
 }
+
 .date-delivery p {
   font-family: "Playfair Display", sans-serif;
   color: #252525;
 }
+
 .other-projexct-details h2 {
   color: #f485ab;
   border-bottom: 1px solid #ddd;
@@ -327,10 +341,12 @@ a {
   position: relative;
   margin-bottom: 15px;
 }
-.other-projexct-details h2 > span {
+
+.other-projexct-details h2>span {
   position: relative;
 }
-.other-projexct-details h2 > span:after {
+
+.other-projexct-details h2>span:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -339,6 +355,7 @@ a {
   bottom: -5px;
   left: 0;
 }
+
 .project-location p {
   font-size: 16px;
   font-weight: 400;
@@ -378,7 +395,7 @@ a {
 }
 
 .panel-heading {
-  background-color: #ebebeb !important ;
+  background-color: #ebebeb !important;
   /* font-size: 1rem; */
   line-height: 1.5;
   font-weight: 400 13.3333px Arial;
@@ -390,6 +407,7 @@ a {
   /* text-align: center; */
   border-radius: 0px !important;
 }
+
 .panel {
   border: 0px !important;
   margin-bottom: 10px;
@@ -400,35 +418,42 @@ a {
   color: #111 !important;
   cursor: pointer;
 }
+
 .panel-body {
   font-size: 14px;
   color: #000;
   overflow-x: hidden;
   font-family: "Century Gothic";
-  padding: 4px 15px !important ;
+  padding: 4px 15px !important;
   border-radius: 0px !important;
 }
+
 .mobile-progress-bar {
   display: none;
 }
+
 .donate-detail-wrap .cause-count .donate-piechart {
   width: 70px;
   height: 70px;
 }
+
 .donate-detail-wrap .sidebar-image .cause-count {
   height: 80px;
   width: 80px;
 }
+
 .detail-page-share {
   display: inline-block;
   margin: 5px;
 }
+
 .notice-wrap .modal-dialog {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) !important;
 }
+
 .notice-wrap .back-setting-ic-wrap {
   color: #fff;
   border: 1px solid #f485ab;
@@ -446,10 +471,12 @@ a {
   .event-details-section {
     margin: 0px;
   }
+
   .donate-detail-wrap .cause-count .donate-piechart {
     width: 70px;
     height: 70px;
   }
+
   .donate-detail-wrap .sidebar-image .cause-count {
     height: 80px;
     width: 80px;
@@ -458,51 +485,63 @@ a {
   .title-donation-wrap .top-text {
     display: none;
   }
+
   .title-donation-wrap .top-text.top-text-wrap {
     display: block;
   }
+
   .title-donation-wrap {
     margin-top: 20px;
   }
+
   .sidebar-image {
     margin-bottom: 0px;
   }
 }
+
 @media (max-width: 600px) {
   .mobile-progress-bar {
     display: block;
   }
+
   .desktop-progress-bar {
     display: none !important;
   }
+
   .event-details-time {
     flex-flow: column !important;
     text-align: center;
   }
+
   .sidebar-image .event-details-time .fund-raise-wrap {
     font-size: 18px;
     /* font-weight: bold; */
 
     margin-bottom: 0px;
   }
+
   .sidebar-image .event-details-time .fund-goal-wrap {
     font-size: 18px;
     /* font-weight: bold; */
 
     margin-bottom: 0px;
   }
+
   /*   .cause-count {
     align-self: center;
     margin-bottom: 18px;
   } */
 }
+
 @media (max-width: 767px) {
   .single-event .cause-details {
     margin-top: 0px;
   }
+
   .single-event .cause-details .cause-info {
     display: block;
   }
+
   .single-event .cause-details .cause-info li {
     display: inline-block;
   }
@@ -512,19 +551,23 @@ a {
   max-height: 400px;
   overflow: auto;
 }
+
 .comment-post .scroll {
   max-height: 800px;
 }
+
 .title-donation-wrap .title {
   color: #f385ab;
   word-wrap: break-word;
   word-break: break-word;
 }
+
 .single-event .bottom-text .title {
   color: #f385ab;
   word-wrap: break-word;
   word-break: break-word;
 }
+
 .donation-view-wrap {
   position: sticky;
   position: -webkit-sticky;
@@ -533,25 +576,30 @@ a {
   position: -o-sticky;
   top: 114px;
 }
+
 .notice-heading {
   text-align: center;
   font-size: 20px;
   color: #000;
   font-weight: bold;
 }
+
 .texteditor-details img {
   max-width: 100% !important;
 }
+
 .sponsor-side-wrapper li.reward-block {
   border: 0;
   border-bottom: solid 1px #eaf0f2;
   box-shadow: none;
   margin: 0;
 }
+
 .sponsor-side-wrapper li.reward-block:last-child {
   border-bottom: 0;
   padding-bottom: 0;
 }
+
 .sponsor-side-wrapper .reward-check-btn label:after {
   width: 22px;
   height: 22px;
@@ -560,41 +608,50 @@ a {
   background-position: 1px 2px;
   background-size: 24px auto;
 }
+
 .sponsor-side-wrapper .reward-check-btn {
   top: 0;
   left: -33px;
   height: 22px;
   width: 22px;
 }
+
 .sponsor-side-wrapper .reward-inner-block {
   padding-left: 0;
   display: flex;
   align-items: center;
 }
-.sponsor-side-wrapper .reward-inner-block .reward-text-wrap{
+
+.sponsor-side-wrapper .reward-inner-block .reward-text-wrap {
   padding-left: 20px;
 }
+
 .sponsor-side-wrapper .reward-block-name {
   font-size: 18px;
   font-weight: 600;
 }
+
 .sponsor-side-wrapper .reward-text-wrap h2 {
   font-size: 15px;
   line-height: 22px;
   margin-top: 5px;
 }
+
 .sponsor-side-wrapper .reward-text-wrap p {
   font-size: 13px;
   margin-bottom: 0;
 }
+
 .sponsor-donate-btn {
   margin-left: 8px;
 }
+
 .sponsor-donate-btn .btn-donate-big {
   padding: 5px 10px;
   min-width: 80px;
   font-size: 15px;
 }
+
 /* Custom Scroll bar Start
 -------------------------- */
 /* width */
@@ -602,39 +659,46 @@ a {
   width: 7px;
   height: 7px;
 }
+
 /* Track */
 .sponsor-side-wrapper::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
+
 /* Handle */
 .sponsor-side-wrapper::-webkit-scrollbar-thumb {
   background: #f485ab;
 }
+
 /* Handle on hover */
 .sponsor-side-wrapper::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
 @media (max-width: 1199px) {
   .sponsor-side-wrapper {
     /* height: auto;
     overflow: auto; */
-    max-height: 500px;
     margin-bottom: 25px;
   }
 }
+
 @media (max-width: 575px) {
   .sponsor-side-wrapper li.reward-block {
     flex-direction: column;
   }
+
   .sponsor-donate-btn {
     margin-left: 0;
     margin-top: 10px;
   }
+
   .sponsor-donate-btn .btn-donate-big {
     min-width: 122px;
     font-size: 15px;
   }
-  .sponsor-side-wrapper li.reward-block .reward-text-wrap .sponsor-donate-btn .btn{
+
+  .sponsor-side-wrapper li.reward-block .reward-text-wrap .sponsor-donate-btn .btn {
     min-width: auto;
     font-size: 13px;
     padding: 1px 6px;
