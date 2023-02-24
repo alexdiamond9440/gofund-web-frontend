@@ -167,6 +167,7 @@ class Checkout extends Component {
 
   render() {
     const { isStripeConnected, message, paypalMessage, isInfoSharable } = this.props;
+    console.log(this.props);
 
     const { name, email, mobileNumber, nameError, stripeClientSecret, emailError, orderMetadata } =
       this.state;
@@ -360,7 +361,7 @@ export const StripeModalBody = ({
                 Please wait...
               </button>
             )}
-            {!isStripeConnected && (
+            {/*!isStripeConnected && (
               <div className="custom-tooltip-wrap">
                 <div className="tooltip-inner">
                   <div>{message}</div>
@@ -377,7 +378,7 @@ export const StripeModalBody = ({
                   </button>
                 </div>
               </div>
-            )}
+                    )*/}
             <PaypalCheckout
               isStripeConnected={isStripeConnected}
               onSuccessRedirect={handlePaymentSuccessRedirect}

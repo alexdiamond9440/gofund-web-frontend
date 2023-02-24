@@ -77,15 +77,15 @@ const PaypalCheckout = (props) => {
 
   const buttonProps = isSubscription
     ? {
-        options: { ...options, intent: 'subscription', vault: true },
-        createSubscription: handleCreateSubscription,
-        onApprove: handleApproveSubscription
-      }
+      options: { ...options, intent: 'subscription', vault: true },
+      createSubscription: handleCreateSubscription,
+      onApprove: handleApproveSubscription
+    }
     : {
-        options:{...options, merchantId },
-        createOrder: handleCreateOrder,
-        onApprove: handleApprove
-      };
+      options: { ...options, merchantId },
+      createOrder: handleCreateOrder,
+      onApprove: handleApprove
+    };
 
   return (
     <>

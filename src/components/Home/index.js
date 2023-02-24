@@ -261,7 +261,7 @@ const Home = (props) => {
                   </li>
                   <li>
                     <TiSpiral className="icons-styling spiral" />
-                    Coaching from <span className="theme-text-color"> City Girls Big Dreams </span>
+                    Dream Session from <span className="theme-text-color"> City Girls Big Dreams </span>
                   </li>
                 </ul>
                 <p className="About-us-blog"></p>

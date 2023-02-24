@@ -538,6 +538,26 @@ class DonationSetting extends Component {
     }
   };
 
+  generatePaypalLink = async () => {
+    this.setState({
+      isPaypalLinkLoading: true
+    })
+    try {
+      const {
+        data: { links }
+      } = await axios.post('/payment/paypal/create-onboarding-link');
+      const actionUrl = links.find((link) => link.rel === 'action_url');
+      if (actionUrl) {
+        window.location.href = actionUrl.href;
+      }
+    } catch (error) {
+      this.setState({
+        isError: true,
+        isPaypalLinkLoading: false
+      })
+    }
+  };
+
   createSession = async (e) => {
     e.preventDefault();
     await axios.post('/payment/create-session').then((resp) => {
@@ -560,7 +580,8 @@ class DonationSetting extends Component {
       isDataLoading,
       previousAccountNumber,
       previousRoutingNumber,
-      accountType
+      accountType,
+      isPaypalLinkLoading
     } = this.state;
 
     const {
@@ -603,6 +624,51 @@ class DonationSetting extends Component {
                 <div className="get-paid-now-wrapper">
                   <h1>How would you like to get paid?</h1>
                   <div className="row paid-main-wrap">
+                    <div className="col-12">
+                      <div>
+                        <div className="pg-item">
+                          <img src="assets/img/paypal.png" alt="Paypal" className='pg-icon' />
+                          <div className='pg-desc'>
+                            <div>
+                              <div class="pg-name">Paypal{this.getPaypalStatusBadge()}</div>
+                              <div className="pg-desc">Available Worldwide. 2 - 4 business days to receive money.</div>
+                            </div>
+                            <div>
+                              <button
+                                className="connectBtn is-paypal"
+                                onClick={this.generatePaypalLink}
+                                disabled={isPaypalLinkLoading}>
+                                {isPaypalLinkLoading ? 'Loading....' : 'Connect'}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="pg-item">
+                          <img src="assets/img/stripe.webp" alt="Stripe" className='pg-icon' />
+                          <div className='pg-desc'>
+                            <div>
+                              <div class="pg-name">Direct Deposit
+                                {isStripeRestricted && this.getStatusBadge('Restricted')}
+                                {isRestrictedSoon && this.getStatusBadge('Restricted soon')}
+                                {isStripePending && this.getStatusBadge('Pending')}
+                                {isStripeEnabled && this.getStatusBadge('Enabled')}
+                                {isStripeVerified && this.getStatusBadge('Complete')}</div>
+                              <div className="pg-desc">Available in North America, Australia & Europe. 2 - 4 business days to
+                                receive money.</div>
+                            </div>
+                            <div>
+                              <button
+                                className="connectBtn"
+                                onClick={this.generateLink}
+                                disabled={isStripeLinkLoading}>
+                                {isStripeLinkLoading ? 'Loading....' : 'Connect'}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {/*
                     <div className="col-md-6">
                       <div className="radio">
                         <label className="custom-redio">
@@ -654,8 +720,9 @@ class DonationSetting extends Component {
                         </label>
                       </div>
                     </div>
+                    */}
                   </div>
-                  {paymentMethod === 'stripe' && (
+                  {/*paymentMethod === 'stripe' && (
                     <>
                       {accountType === 'custom' && (
                         <>
@@ -677,7 +744,7 @@ class DonationSetting extends Component {
                         </div>
                       </div>
                     </>
-                  )}
+                      )*/}
                   {stripeConnectedAccountStatus &&
                     accountType === 'custom' &&
                     paymentMethod === 'stripe' && (
@@ -746,7 +813,7 @@ class DonationSetting extends Component {
                         />
                       </>
                     )}
-                  {paymentMethod === 'paypal' && <PaypalOnboarding status={paypalOnboardingStatus} />}
+                  {/*paymentMethod === 'paypal' && <PaypalOnboarding status={paypalOnboardingStatus} />*/}
                   {/* {paymentMethod === 'paypal' && (
                     <PaypalForm
                       {...this.state}

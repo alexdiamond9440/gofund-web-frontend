@@ -294,7 +294,7 @@ class Sidebar extends Component {
                     <span className="icon">
                       <i className="fas fa-chalkboard-teacher"></i>
                     </span>
-                    Coaching
+                    Dream Session
                   </NavLink>
                 </li>
                 <li onClick={this.handleMobileToggle}>

@@ -11,14 +11,14 @@ const Coaching = () => (
               <div className="form-group">
                 <a
                   className="coaching-link dark-pink-clr font-w-500"
-                  href="https://citygirlsbigdreams.com/coaching"
+                  href="https://citygirlsbigdreams.com/book-your-dream-session"
                   target="_blank"
                   rel="noopener noreferrer">
-                  https://citygirlsbigdreams.com/coaching
+                  https://citygirlsbigdreams.com/book-your-dream-session
                 </a>
+                <p className='coach-desc-title'>We’d love to help you and your brand get discovered by more people!</p>
                 <p className="mission-para coaching-text">
-                  Do you need help? Sign up for a 15-minute zoom conversation with our team. Let us
-                  give you some tips about how to start making money.
+                  Our dream sessions are private recorded one-on-one interviews to help women promote their endeavors and get funded. Your interview will be recorded live on Zoom and published to our GoFundHer YouTube channel and social media outlets.
                 </p>
               </div>
             </div>

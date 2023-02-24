@@ -4401,3 +4401,39 @@ a {
         margin-bottom: 20px;
     }
 }
+
+.pg-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.pg-item {
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.pg-desc {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.pg-name {
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.pg-desc {
+    padding-left: 10px;
+}
+
+.coach-desc-title {
+    font-weight: bold;
+    padding-top: 15px;
+}
