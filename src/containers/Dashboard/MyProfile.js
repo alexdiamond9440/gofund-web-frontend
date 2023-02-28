@@ -759,7 +759,18 @@ export const ProfileAvatar = (props) => {
 
   useEffect(() => {
     const isSocialLink = userData?.avatar ? userData.avatar.search('https://') : -1;
-    const imageUrl = isSocialLink > -1 ? userData.avatar : Backend_url + userData.avatar;
+
+    let tmpUrl = "https://gofundher.com/assets/img/default-user-rect.png";
+
+    if (isSocialLink == -1) {
+      if (userData.avatar != null && userData.avatar != "")
+        tmpUrl = "https://gofundher.com" + userData.avatar;
+    } else
+      tmpUrl = userData.avatar;
+
+    console.log(isSocialLink, userData, tmpUrl)
+
+    const imageUrl = tmpUrl;
     dispatch({ type: 'SET_AVATAR_URL', payload: imageUrl });
   }, [userData]);
 

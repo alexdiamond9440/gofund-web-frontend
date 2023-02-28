@@ -572,6 +572,7 @@ class DonationSetting extends Component {
       paymentMethod,
       stripeConnectedAccountStatus,
       paypalOnboardingStatus,
+      isPaypalConnected,
       isStripeLinkLoading,
       futureVerfication,
       routingNumber,
@@ -610,6 +611,12 @@ class DonationSetting extends Component {
       capabilities.platform_payments === 'pending';
     const isStripeEnabled = !isStripeRestricted && !isStripeVerified;
 
+    let stripButtonLabel = "Connect";
+    stripButtonLabel = isStripeVerified ? "Edit" : ((isStripePending || isRestrictedSoon || isStripeRestricted) ? "Finish Registration" : "Connect");
+
+    let paypalButtonLabel = "Connect";
+    paypalButtonLabel = paypalOnboardingStatus == "Active" || isPaypalConnected ? "Edit" : "Connect";
+
     return (
       <div className="col-md-10 col-sm-9 dashboard-right-warp">
         <div className="dashboard-right">
@@ -638,7 +645,7 @@ class DonationSetting extends Component {
                                 className="connectBtn is-paypal"
                                 onClick={this.generatePaypalLink}
                                 disabled={isPaypalLinkLoading}>
-                                {isPaypalLinkLoading ? 'Loading....' : 'Connect'}
+                                {isPaypalLinkLoading ? 'Loading....' : paypalButtonLabel}
                               </button>
                             </div>
                           </div>
@@ -661,7 +668,7 @@ class DonationSetting extends Component {
                                 className="connectBtn"
                                 onClick={this.generateLink}
                                 disabled={isStripeLinkLoading}>
-                                {isStripeLinkLoading ? 'Loading....' : 'Connect'}
+                                {isStripeLinkLoading ? 'Loading....' : stripButtonLabel}
                               </button>
                             </div>
                           </div>
