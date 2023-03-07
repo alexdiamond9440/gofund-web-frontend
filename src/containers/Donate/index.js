@@ -416,7 +416,7 @@ class Donate extends Component {
                                         <div className="pledge-amout-text-wrp">
                                           <div className="text-center mt-4">
                                             <div className="small-title m-b-3">
-                                              ss Sponsorship: $
+                                              Sponsorship: $
                                               {numberWithCommas(Number(amount).toFixed(2))}
                                             </div>
                                             <div className="small-title m-b-3">

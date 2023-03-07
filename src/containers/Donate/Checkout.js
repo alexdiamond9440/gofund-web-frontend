@@ -379,17 +379,18 @@ export const StripeModalBody = ({
                 </div>
               </div>
                     )*/}
-            <PaypalCheckout
-              isStripeConnected={isStripeConnected}
-              onSuccessRedirect={handlePaymentSuccessRedirect}
-              amount={amount}
-              tipAmount={tipAmount}
-              message={paypalMessage}
-              receiverId={receiverId}
-              metadata={orderMetadata}
-              planId={planId}
-              isSubscription={props.monthly}
-            />
+            {isPaypalConnected && (
+              <PaypalCheckout
+                isStripeConnected={isStripeConnected}
+                onSuccessRedirect={handlePaymentSuccessRedirect}
+                amount={amount}
+                tipAmount={tipAmount}
+                message={paypalMessage}
+                receiverId={receiverId}
+                metadata={orderMetadata}
+                planId={planId}
+                isSubscription={props.monthly}
+              />)}
             {/* <PaypalCheckoutEmail
               isStripeConnected={isStripeConnected}
               onSuccessRedirect={handlePaymentSuccessRedirect}
