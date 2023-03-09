@@ -1,7 +1,7 @@
 /** @format */
 
 import { numberWithCommas } from 'helpers/numberWithCommas';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player/lazy';
 
 const RewardGrid = (props) => {
@@ -10,26 +10,26 @@ const RewardGrid = (props) => {
     isPaypalConnected,
     reward,
     rewardId,
-    amount,
+    //amount,
     handleRecurring,
     oneTime,
     monthly,
     projectName,
-    payTip,
-    toggle,
-    totalAmount,
-    tipAmount,
+    //payTip,
+    //toggle,
+    //totalAmount,
+    //tipAmount,
     handleToggle,
     handleToggleForContactInfo,
     handlePayTip,
-    comment,
-    isInfoSharable
+    //comment,
+    //isInfoSharable
   } = props;
 
   useEffect(() => {
-    if (rewardId) {
+    if (reward.id) {
       const supportsNativeSmoothScroll = 'scrollBehavior' in document.documentElement.style;
-      const section = document.getElementById(`reward_id${rewardId}`);
+      const section = document.getElementById(`reward_id${reward.id}`);
       const scrollTo = section ? section.getBoundingClientRect().top + window.scrollY : 0;
       if (supportsNativeSmoothScroll) {
         window.scroll({
@@ -40,7 +40,7 @@ const RewardGrid = (props) => {
         window.scrollTo(0, scrollTo);
       }
     }
-  }, [rewardId]);
+  }, [reward]);
   let image;
   try {
     image = JSON.parse(reward.reward_image);
@@ -107,17 +107,17 @@ const RewardGrid = (props) => {
                 <div className="col-md-6">
                   <div className="all-inputs-wrap d-flex">
                     <button
-                      className={`btn btn-one-time mt-0 ${oneTime ? 'active' : ''}`}
-                      onClick={() => handleRecurring('oneTime')}>
+                      className={`btn btn-one-time mt-0 ${reward.oneTime ? 'active' : ''}`}
+                      onClick={() => handleRecurring(reward.id, 'oneTime')}>
                       One Time
                     </button>
                     <button
-                      className={`btn btn-recurring mt-0 ${monthly ? 'active' : ''}`}
-                      onClick={() => handleRecurring('monthly')}>
+                      className={`btn btn-recurring mt-0 ${reward.monthly ? 'active' : ''}`}
+                      onClick={() => handleRecurring(reward.id, 'monthly')}>
                       Monthly
                     </button>
                   </div>
-                  {oneTime && (
+                  {reward.oneTime && (
                     <>
                       <div className="pledge-amount-block half-input-wrap">
                         <div className="input-group">
@@ -125,15 +125,14 @@ const RewardGrid = (props) => {
                             <i className="fas fa-dollar-sign" />
                           </div>
                           <input
-                            className={`form-control form-input ${
-                              parseInt(amount) < parseInt(reward.donate_amount) || amount === ''
-                                ? 'error'
-                                : ''
-                            }`}
+                            className={`form-control form-input ${parseInt(reward.amount) < parseInt(reward.donate_amount) || reward.amount === ''
+                              ? 'error'
+                              : ''
+                              }`}
                             type="text"
                             name="amount"
-                            value={amount}
-                            onChange={(e) => props.handleInputChange(reward.donate_amount, e)}
+                            value={reward.amount}
+                            onChange={(e) => props.handleInputChange(reward.id, e)}
                           />
                         </div>
                       </div>
@@ -143,15 +142,15 @@ const RewardGrid = (props) => {
                           rows={4}
                           cols={50}
                           name="comment"
-                          value={comment}
+                          value={reward.comment}
                           placeholder="Send message to fundraiser(optional)"
-                          onChange={(e) => props.handleInputChange(comment, e)}
+                          onChange={(e) => props.handleInputChange(reward.id, e)}
                           maxLength={500}
                         />
                       </div>
                     </>
                   )}
-                  {!oneTime && (
+                  {!reward.oneTime && (
                     <>
                       <div className="pledge-amount-block half-input-wrap">
                         <div className="input-group">
@@ -162,8 +161,8 @@ const RewardGrid = (props) => {
                             className={`form-control form-input`}
                             type="text"
                             name="amount"
-                            value={amount}
-                            onChange={(e) => props.handleInputChange(reward.donate_amount, e)}
+                            value={reward.amount}
+                            onChange={(e) => props.handleInputChange(reward.id, e)}
                           />
                         </div>
                       </div>
@@ -173,9 +172,9 @@ const RewardGrid = (props) => {
                           rows={4}
                           cols={50}
                           name="comment"
-                          value={comment}
+                          value={reward.comment}
                           placeholder="Send message to fundraiser(optional)"
-                          onChange={(e) => props.handleInputChange(comment, e)}
+                          onChange={(e) => props.handleInputChange(reward.id, e)}
                           maxLength={500}
                         />
                       </div>{' '}
@@ -188,8 +187,8 @@ const RewardGrid = (props) => {
                           <input
                             type="checkbox"
                             name="toggle"
-                            checked={isInfoSharable}
-                            onChange={handleToggleForContactInfo}
+                            checked={reward.isInfoSharable}
+                            onChange={(e) => handleToggleForContactInfo(reward.id, e)}
                           />
                           <span className="slider round slide-yes-no-wrap">
                             <span className="yes-field">Yes</span>
@@ -212,8 +211,8 @@ const RewardGrid = (props) => {
                             <input
                               type="checkbox"
                               name="toggle"
-                              checked={toggle}
-                              onChange={handleToggle}
+                              checked={reward.toggle}
+                              onChange={(e) => handleToggle(reward.id, e)}
                             />
                             <span className="slider round slide-yes-no-wrap">
                               <span className="yes-field">Yes</span>
@@ -227,13 +226,12 @@ const RewardGrid = (props) => {
                       </div>
                     </div>
                     <div
-                      className={`input-group select-tip-wrap mt-0 ${
-                        toggle ? 'tip-select-wrap' : 'tip-select-hide-wrap'
-                      }`}>
+                      className={`input-group select-tip-wrap mt-0 ${reward.toggle ? 'tip-select-wrap' : 'tip-select-hide-wrap'
+                        }`}>
                       <select
                         name="payTip"
-                        value={payTip}
-                        onChange={handlePayTip}
+                        value={reward.payTip}
+                        onChange={(e) => handlePayTip(reward.id, e)}
                         className="form-control">
                         <option value="5">Tip GoFundHer 0%</option>
                         <option value="10">Tip GoFundHer 5%</option>
@@ -245,18 +243,18 @@ const RewardGrid = (props) => {
                     <div className="pledge-amout-text-wrp 2">
                       <div className="text-center mt-4">
                         <div className="small-title m-b-3">
-                          Sponsorship: ${numberWithCommas(Number(amount).toFixed(2))}
+                          Sponsorship: ${numberWithCommas(Number(reward.amount).toFixed(2))}
                         </div>
                         <div className="small-title m-b-3">
-                          {`Fee ${payTip > 5 && '+ Tip'}`}: $
-                          {numberWithCommas(tipAmount.toFixed(2))}
+                          {`Fee ${reward.payTip > 5 ? '+ Tip' : ''}`}: $
+                          {numberWithCommas(reward.tipAmount.toFixed(2))}
                         </div>
                         <div className="amount-text-wrap amount-with-fee mb-0">
-                          {totalAmount > 0 && `Total: $${numberWithCommas(totalAmount.toFixed(2))}`}
+                          {reward.totalAmount > 0 && `Total: $${numberWithCommas(reward.totalAmount.toFixed(2))}`}
                         </div>
                       </div>
                       <div className="amount-note remove-m-top">
-                        {monthly && 'Note: This amount has been rounded off*'}
+                        {reward.monthly && 'Note: This amount has been rounded off*'}
                       </div>
                       <div className="checkout-btn">
                         {!isStripeConnected && !isPaypalConnected && (
@@ -279,11 +277,11 @@ const RewardGrid = (props) => {
                         {(isStripeConnected || isPaypalConnected) && (
                           <button
                             className="btn btn-donate-big btn-checkout w-100"
-                            onClick={props.makePledge}
+                            onClick={(e) => props.makePledge(reward.id)}
                             disabled={
-                              oneTime
-                                ? parseInt(amount) < parseInt(reward.donate_amount) || amount === ''
-                                : parseInt(amount) < parseInt(reward.donate_amount) || amount === ''
+                              reward.oneTime
+                                ? parseInt(reward.amount) < parseInt(reward.donate_amount) || reward.amount === ''
+                                : parseInt(reward.amount) < parseInt(reward.donate_amount) || reward.amount === ''
                             }>
                             SPONSOR
                           </button>

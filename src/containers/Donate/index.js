@@ -110,12 +110,26 @@ class Donate extends Component {
         }
       }
 
+      let tmpRewards = data.reward ? JSON.parse(data.reward) : [];
+      console.log('tmpRewards', tmpRewards);
+
+      for (let idx in tmpRewards) {
+        tmpRewards[idx].amount = tmpRewards[idx].donate_amount;
+        tmpRewards[idx].tipAmount = 0;
+        tmpRewards[idx].totalAmount = 0;
+        tmpRewards[idx].isInfoSharable = true;
+        tmpRewards[idx].payTip = 5;
+        tmpRewards[idx].oneTime = true;
+        tmpRewards[idx].monthly = false;
+        tmpRewards[idx].toggle = true;
+      }
+
       this.setState({
         project: data,
         user: data.User,
         isPaypalConnected: isPaypalConnected,
         loading: false,
-        rewards: data.reward ? JSON.parse(data.reward) : []
+        rewards: tmpRewards
       });
     } catch (err) {
       this.props.history.replace('/404');
@@ -150,6 +164,54 @@ class Donate extends Component {
     }
   };
 
+  handleGridInputChange = (reward_id, event) => {
+
+    const { name, value } = event.target;
+    console.log(name, value, reward_id);
+    let error = '';
+    let rewards = this.state.rewards;
+
+    for (let p in rewards) {
+      if (reward_id == rewards[p].id) {
+        if (name === 'amount') {
+          console.log('current reward = ', rewards[p]);
+
+          if (value < rewards[p].donate_amount) {
+            error = 'error';
+          }
+
+          if (isNaN(value)) {
+            return;
+          }
+
+          rewards[p].amount = value;
+
+          let totalAmount = rewards[p].amount ? parseFloat(rewards[p].amount) : 0;
+          let tipAmount = 0;
+          if (rewards[p].amount && rewards[p].payTip) {
+            tipAmount = (totalAmount * parseFloat(rewards[p].payTip)) / 100;
+          }
+          totalAmount = rewards[p].oneTime ? totalAmount + tipAmount : Math.ceil(totalAmount + tipAmount);
+
+          rewards[p].tipAmount = tipAmount;
+          rewards[p].totalAmount = totalAmount;
+
+          this.setState({
+            [name]: value,
+            rewards,
+            error
+          });
+        } else {
+          this.setState({
+            [name]: value
+          });
+        }
+
+        break;
+      }
+    }
+  };
+
   makePledge = () => {
     // const currentUser = this.context;
     const currentUser = this.props.user;
@@ -169,6 +231,49 @@ class Donate extends Component {
     }
   };
 
+  makeGridPledge = (reward_id) => {
+    // const currentUser = this.context;
+    let rewards = this.state.rewards;
+    const currentUser = this.props.user;
+    console.log(currentUser);
+
+    for (let p in rewards) {
+      if (reward_id == rewards[p].id) {
+
+        if (currentUser) {
+          this.setState({
+            pledge: true,
+            show: true,
+            rewardId: rewards[p].id,
+            oneTime: rewards[p].oneTime,
+            monthly: rewards[p].monthly,
+            payTip: rewards[p].payTip,
+            tipAmount: rewards[p].tipAmount,
+            toggle: rewards[p].toggle,
+            isInfoSharable: rewards[p].isInfoSharable,
+            totalAmount: rewards[p].totalAmount
+          });
+        } else {
+          this.setState({
+            pledge: true,
+            show: false,
+            guestShow: true,
+            rewardId: rewards[p].id,
+            oneTime: rewards[p].oneTime,
+            monthly: rewards[p].monthly,
+            payTip: rewards[p].payTip,
+            tipAmount: rewards[p].tipAmount,
+            toggle: rewards[p].toggle,
+            isInfoSharable: rewards[p].isInfoSharable,
+            totalAmount: rewards[p].totalAmount
+          });
+        }
+
+        break;
+      }
+    }
+  };
+
   handleClose = () => {
     this.setState({ show: false });
   };
@@ -180,10 +285,58 @@ class Donate extends Component {
     });
   };
 
+  handleGridRecurring = (reward_id, name) => {
+    let rewards = this.state.rewards;
+
+    for (let p in rewards) {
+      if (reward_id == rewards[p].id) {
+        console.log('current reward = ', rewards[p]);
+
+        rewards[p].oneTime = name === 'oneTime';
+        rewards[p].monthly = name === 'monthly';
+
+        this.setState({
+          rewards
+        });
+
+        break;
+      }
+    }
+  };
+
   handlePayTip = (event) => {
     const { value } = event.target;
 
     this.setState({ payTip: value });
+  };
+
+  handleGridPayTip = (reward_id, event) => {
+
+    let rewards = this.state.rewards;
+
+    for (let p in rewards) {
+      if (reward_id == rewards[p].id) {
+        console.log('current reward = ', rewards[p]);
+        const { value } = event.target;
+        rewards[p].payTip = value;
+
+        let totalAmount = rewards[p].amount ? parseFloat(rewards[p].amount) : 0;
+        let tipAmount = 0;
+        if (rewards[p].amount && rewards[p].payTip) {
+          tipAmount = (totalAmount * parseFloat(rewards[p].payTip)) / 100;
+        }
+        totalAmount = rewards[p].oneTime ? totalAmount + tipAmount : Math.ceil(totalAmount + tipAmount);
+
+        rewards[p].tipAmount = tipAmount;
+        rewards[p].totalAmount = totalAmount;
+
+        this.setState({
+          rewards
+        });
+
+        break;
+      }
+    }
   };
 
   handleToggleForContactInfo = (event) => {
@@ -191,9 +344,60 @@ class Donate extends Component {
     this.setState({ isInfoSharable: checked });
   };
 
+  handleGridToggleForContactInfo = (reward_id, event) => {
+
+    let rewards = this.state.rewards;
+
+    for (let p in rewards) {
+      if (reward_id == rewards[p].id) {
+        console.log('current reward = ', rewards[p]);
+
+        const { checked } = event.target;
+        rewards[p].isInfoSharable = checked;
+
+        this.setState({
+          rewards
+        });
+
+        break;
+      }
+    }
+  };
+
   handleToggle = (event) => {
     const { checked } = event.target;
     this.setState({ toggle: checked, payTip: checked ? 5 : 0 });
+  };
+
+  handleGridToggle = (reward_id, event) => {
+
+    let rewards = this.state.rewards;
+
+    for (let p in rewards) {
+      if (reward_id == rewards[p].id) {
+        console.log('current reward = ', rewards[p]);
+
+        const { checked } = event.target;
+        rewards[p].toggle = checked;
+        rewards[p].payTip = checked ? 5 : 0;
+
+        let totalAmount = rewards[p].amount ? parseFloat(rewards[p].amount) : 0;
+        let tipAmount = 0;
+        if (rewards[p].amount && rewards[p].payTip) {
+          tipAmount = (totalAmount * parseFloat(rewards[p].payTip)) / 100;
+        }
+        totalAmount = rewards[p].oneTime ? totalAmount + tipAmount : Math.ceil(totalAmount + tipAmount);
+
+        rewards[p].tipAmount = tipAmount;
+        rewards[p].totalAmount = totalAmount;
+
+        this.setState({
+          rewards
+        });
+
+        break;
+      }
+    }
   };
 
   render() {
@@ -231,23 +435,23 @@ class Donate extends Component {
           isPaypalConnected={isPaypalConnected}
           reward={reward}
           key={reward.id}
-          oneTime={oneTime}
-          monthly={monthly}
+          //oneTime={oneTime}
+          //monthly={monthly}
           handleChange={() => this.handleChange(reward.id, reward.donate_amount)}
-          handleInputChange={this.handleInputChange}
-          handleRecurring={this.handleRecurring}
+          handleInputChange={this.handleGridInputChange}
+          handleRecurring={this.handleGridRecurring}
           makePledge={this.makePledge}
-          handleToggle={this.handleToggle}
-          handleToggleForContactInfo={this.handleToggleForContactInfo}
-          handlePayTip={this.handlePayTip}
-          payTip={payTip}
-          tipAmount={tipAmount}
-          toggle={toggle}
-          isInfoSharable={isInfoSharable}
-          totalAmount={totalAmount}
+          handleToggle={this.handleGridToggle}
+          handleToggleForContactInfo={this.handleGridToggleForContactInfo}
+          handlePayTip={this.handleGridPayTip}
+          //payTip={payTip}
+          //tipAmount={tipAmount}
+          //toggle={toggle}
+          //isInfoSharable={isInfoSharable}
+          //totalAmount={totalAmount}
           projectName={[user?.first_name, user?.last_name].join(' ')}
           rewardId={reward.id}
-          amount={amount}
+          //amount={reward.amount}
           error={error}
           comment={comment}
         />
