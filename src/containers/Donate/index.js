@@ -240,6 +240,8 @@ class Donate extends Component {
     for (let p in rewards) {
       if (reward_id == rewards[p].id) {
 
+        console.log('--selected reward--', rewards[p]);
+
         if (currentUser) {
           this.setState({
             pledge: true,
@@ -248,6 +250,7 @@ class Donate extends Component {
             oneTime: rewards[p].oneTime,
             monthly: rewards[p].monthly,
             payTip: rewards[p].payTip,
+            amount: rewards[p].amount,
             tipAmount: rewards[p].tipAmount,
             toggle: rewards[p].toggle,
             isInfoSharable: rewards[p].isInfoSharable,
@@ -440,7 +443,7 @@ class Donate extends Component {
           handleChange={() => this.handleChange(reward.id, reward.donate_amount)}
           handleInputChange={this.handleGridInputChange}
           handleRecurring={this.handleGridRecurring}
-          makePledge={this.makePledge}
+          makePledge={this.makeGridPledge}
           handleToggle={this.handleGridToggle}
           handleToggleForContactInfo={this.handleGridToggleForContactInfo}
           handlePayTip={this.handleGridPayTip}

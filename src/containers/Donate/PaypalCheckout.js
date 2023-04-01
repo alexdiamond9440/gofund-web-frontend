@@ -27,6 +27,8 @@ const PaypalCheckout = (props) => {
         const response = await axios.post('/payment/paypal/create-order', {
           ...metadata
         });
+
+        console.log(response);
         setOrderId(response.data.data);
         setMerchantId(response.data.merchantId);
       } finally {
