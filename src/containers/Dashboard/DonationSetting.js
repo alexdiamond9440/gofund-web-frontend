@@ -650,6 +650,7 @@ class DonationSetting extends Component {
                             </div>
                           </div>
                         </div>
+                        {/*
                         <div className="pg-item">
                           <img src="assets/img/stripe.webp" alt="Stripe" className='pg-icon' />
                           <div className='pg-desc'>
@@ -673,6 +674,7 @@ class DonationSetting extends Component {
                             </div>
                           </div>
                         </div>
+              */}
                       </div>
                     </div>
                     {/*
